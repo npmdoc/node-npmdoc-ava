@@ -1,0 +1,3057 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://ava.li">ava (v0.18.2)</a>
+</h1>
+<h4>Futuristic test runner ðŸš€</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava">module ava</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.ava_files">
+            function <span class="apidocSignatureSpan">ava.</span>ava_files
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.enhance_assert">
+            function <span class="apidocSignatureSpan">ava.</span>enhance_assert
+            <span class="apidocSignatureSpan">('empower-core')</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.runner">
+            function <span class="apidocSignatureSpan">ava.</span>runner
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.</span>_iron_node</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.</span>assert</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.</span>babel_config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.</span>colors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.</span>globals</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.</span>runner.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.</span>snapshot_state</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava._iron_node">module ava._iron_node</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava._iron_node.workSpaceDirectory">
+            function <span class="apidocSignatureSpan">ava._iron_node.</span>workSpaceDirectory
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava._iron_node.</span>app</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava.assert">module ava.assert</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.assert._snapshot">
+            function <span class="apidocSignatureSpan">ava.assert.</span>_snapshot
+            <span class="apidocSignatureSpan">(tree, optionalMessage, match, snapshotStateGetter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.assert.deepEqual">
+            function <span class="apidocSignatureSpan">ava.assert.</span>deepEqual
+            <span class="apidocSignatureSpan">(val, expected, msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.assert.fail">
+            function <span class="apidocSignatureSpan">ava.assert.</span>fail
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.assert.false">
+            function <span class="apidocSignatureSpan">ava.assert.</span>false
+            <span class="apidocSignatureSpan">(val, msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.assert.falsy">
+            function <span class="apidocSignatureSpan">ava.assert.</span>falsy
+            <span class="apidocSignatureSpan">(val, msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.assert.ifError">
+            function <span class="apidocSignatureSpan">ava.assert.</span>ifError
+            <span class="apidocSignatureSpan">(err, msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.assert.is">
+            function <span class="apidocSignatureSpan">ava.assert.</span>is
+            <span class="apidocSignatureSpan">(val, expected, msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.assert.not">
+            function <span class="apidocSignatureSpan">ava.assert.</span>not
+            <span class="apidocSignatureSpan">(val, expected, msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.assert.notDeepEqual">
+            function <span class="apidocSignatureSpan">ava.assert.</span>notDeepEqual
+            <span class="apidocSignatureSpan">(val, expected, msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.assert.notRegex">
+            function <span class="apidocSignatureSpan">ava.assert.</span>notRegex
+            <span class="apidocSignatureSpan">(contents, regex, msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.assert.notThrows">
+            function <span class="apidocSignatureSpan">ava.assert.</span>notThrows
+            <span class="apidocSignatureSpan">(fn, msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.assert.pass">
+            function <span class="apidocSignatureSpan">ava.assert.</span>pass
+            <span class="apidocSignatureSpan">(true, create(true, true, 'pass', msg, x.pass)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.assert.regex">
+            function <span class="apidocSignatureSpan">ava.assert.</span>regex
+            <span class="apidocSignatureSpan">(contents, regex, msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.assert.snapshot">
+            function <span class="apidocSignatureSpan">ava.assert.</span>snapshot
+            <span class="apidocSignatureSpan">(tree, optionalMessage)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.assert.throws">
+            function <span class="apidocSignatureSpan">ava.assert.</span>throws
+            <span class="apidocSignatureSpan">(fn, err, msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.assert.true">
+            function <span class="apidocSignatureSpan">ava.assert.</span>true
+            <span class="apidocSignatureSpan">(val, msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.assert.truthy">
+            function <span class="apidocSignatureSpan">ava.assert.</span>truthy
+            <span class="apidocSignatureSpan">(val, msg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava.ava_files">module ava.ava_files</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.ava_files.ava_files">
+            function <span class="apidocSignatureSpan">ava.</span>ava_files
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.ava_files.defaultExcludePatterns">
+            function <span class="apidocSignatureSpan">ava.ava_files.</span>defaultExcludePatterns
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.ava_files.defaultIncludePatterns">
+            function <span class="apidocSignatureSpan">ava.ava_files.</span>defaultIncludePatterns
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava.babel_config">module ava.babel_config</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.babel_config.build">
+            function <span class="apidocSignatureSpan">ava.babel_config.</span>build
+            <span class="apidocSignatureSpan">(babelConfig, powerAssert, filePath, code)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.babel_config.validate">
+            function <span class="apidocSignatureSpan">ava.babel_config.</span>validate
+            <span class="apidocSignatureSpan">(conf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.babel_config.</span>presetHashes</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava.colors">module ava.colors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.colors.duration">
+            function <span class="apidocSignatureSpan">ava.colors.</span>duration
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.colors.error">
+            function <span class="apidocSignatureSpan">ava.colors.</span>error
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.colors.errorSource">
+            function <span class="apidocSignatureSpan">ava.colors.</span>errorSource
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.colors.errorStack">
+            function <span class="apidocSignatureSpan">ava.colors.</span>errorStack
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.colors.information">
+            function <span class="apidocSignatureSpan">ava.colors.</span>information
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.colors.pass">
+            function <span class="apidocSignatureSpan">ava.colors.</span>pass
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.colors.skip">
+            function <span class="apidocSignatureSpan">ava.colors.</span>skip
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.colors.stack">
+            function <span class="apidocSignatureSpan">ava.colors.</span>stack
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.colors.title">
+            function <span class="apidocSignatureSpan">ava.colors.</span>title
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.colors.todo">
+            function <span class="apidocSignatureSpan">ava.colors.</span>todo
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava.enhance_assert">module ava.enhance_assert</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.enhance_assert.enhance_assert">
+            function <span class="apidocSignatureSpan">ava.</span>enhance_assert
+            <span class="apidocSignatureSpan">('empower-core')</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.enhance_assert.formatter">
+            function <span class="apidocSignatureSpan">ava.enhance_assert.</span>formatter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.enhance_assert.</span>NON_ENHANCED_PATTERNS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.enhance_assert.</span>PATTERNS</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava.globals">module ava.globals</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.globals.clearTimeout">
+            function <span class="apidocSignatureSpan">ava.globals.</span>clearTimeout
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.globals.now">
+            function <span class="apidocSignatureSpan">ava.globals.</span>now
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.globals.setImmediate">
+            function <span class="apidocSignatureSpan">ava.globals.</span>setImmediate
+            <span class="apidocSignatureSpan">(callback, arg1, arg2, arg3)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.globals.setTimeout">
+            function <span class="apidocSignatureSpan">ava.globals.</span>setTimeout
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.globals.</span>options</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava.runner">module ava.runner</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.runner.runner">
+            function <span class="apidocSignatureSpan">ava.</span>runner
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.runner.</span>_chainableMethods</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava.runner.prototype">module ava.runner.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.runner.prototype.after">
+            function <span class="apidocSignatureSpan">ava.runner.prototype.</span>after
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.runner.prototype.afterEach">
+            function <span class="apidocSignatureSpan">ava.runner.prototype.</span>afterEach
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.runner.prototype.always">
+            function <span class="apidocSignatureSpan">ava.runner.prototype.</span>always
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.runner.prototype.before">
+            function <span class="apidocSignatureSpan">ava.runner.prototype.</span>before
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.runner.prototype.beforeEach">
+            function <span class="apidocSignatureSpan">ava.runner.prototype.</span>beforeEach
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.runner.prototype.cb">
+            function <span class="apidocSignatureSpan">ava.runner.prototype.</span>cb
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.runner.prototype.failing">
+            function <span class="apidocSignatureSpan">ava.runner.prototype.</span>failing
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.runner.prototype.only">
+            function <span class="apidocSignatureSpan">ava.runner.prototype.</span>only
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.runner.prototype.serial">
+            function <span class="apidocSignatureSpan">ava.runner.prototype.</span>serial
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.runner.prototype.skip">
+            function <span class="apidocSignatureSpan">ava.runner.prototype.</span>skip
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.runner.prototype.test">
+            function <span class="apidocSignatureSpan">ava.runner.prototype.</span>test
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.runner.prototype.todo">
+            function <span class="apidocSignatureSpan">ava.runner.prototype.</span>todo
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava.snapshot_state">module ava.snapshot_state</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.snapshot_state.get">
+            function <span class="apidocSignatureSpan">ava.snapshot_state.</span>get
+            <span class="apidocSignatureSpan">(initializeState, globalsOptions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.snapshot_state.</span>state</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava" id="apidoc.module.ava">module ava</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava.ava_files" id="apidoc.element.ava.ava_files">
+        function <span class="apidocSignatureSpan">ava.</span>ava_files
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class AvaFiles {
+	constructor(options) {
+		options = options || {};
+
+		let files = (options.files || []).map(file =&gt; {
+			// `./` should be removed from the beginning of patterns because
+			// otherwise they won't match change events from Chokidar
+			if (file.slice(0, 2) === './') {
+				return file.slice(2);
+			}
+
+			return file;
+		});
+
+		if (files.length === 0) {
+			files = defaultIncludePatterns();
+		}
+
+		this.excludePatterns = defaultExcludePatterns();
+		this.files = files;
+		this.sources = options.sources || [];
+		this.cwd = options.cwd || process.cwd();
+
+		autoBind(this);
+	}
+	findTestFiles() {
+		return handlePaths(this.files, this.excludePatterns, {
+			cwd: this.cwd,
+			cache: Object.create(null),
+			statCache: Object.create(null),
+			realpathCache: Object.create(null),
+			symlinks: Object.create(null)
+		});
+	}
+	findTestHelpers() {
+		return handlePaths(defaultHelperPatterns(), ['!**/node_modules/**'], {
+			cwd: this.cwd,
+			includeUnderscoredFiles: true,
+			cache: Object.create(null),
+			statCache: Object.create(null),
+			realpathCache: Object.create(null),
+			symlinks: Object.create(null)
+		});
+	}
+	isSource(filePath) {
+		let mixedPatterns = [];
+		const defaultIgnorePatterns = getDefaultIgnorePatterns();
+		const overrideDefaultIgnorePatterns = [];
+
+		let hasPositivePattern = false;
+		this.sources.forEach(pattern =&gt; {
+			mixedPatterns.push(pattern);
+
+			// TODO: Why not just `pattern[0] !== '!'`?
+			if (!hasPositivePattern &amp;&amp; pattern[0] !== '!') {
+				hasPositivePattern = true;
+			}
+
+			// Extract patterns that start with an ignored directory. These need to be
+			// rematched separately.
+			if (defaultIgnore.indexOf(pattern.split('/')[0]) &gt;= 0) {
+				overrideDefaultIgnorePatterns.push(pattern);
+			}
+		});
+
+		// Same defaults as used for Chokidar
+		if (!hasPositivePattern) {
+			mixedPatterns = ['package.json', '**/*.js'].concat(mixedPatterns);
+		}
+
+		filePath = matchable(filePath);
+
+		// Ignore paths outside the current working directory.
+		// They can't be matched to a pattern.
+		if (/^\.\.\//.test(filePath)) {
+			return false;
+		}
+
+		const isSource = multimatch(filePath, mixedPatterns).length === 1;
+		if (!isSource) {
+			return false;
+		}
+
+		const isIgnored = multimatch(filePath, defaultIgnorePatterns).length === 1;
+		if (!isIgnored) {
+			return true;
+		}
+
+		const isErroneouslyIgnored = multimatch(filePath, overrideDefaultIgnorePatterns).length === 1;
+		if (isErroneouslyIgnored) {
+			return true;
+		}
+
+		return false;
+	}
+	isTest(filePath) {
+		const excludePatterns = this.excludePatterns;
+		const initialPatterns = this.files.concat(excludePatterns);
+
+		// Like in `api.js`, tests must be `.js` files and not start with `_`
+		if (path.extname(filePath) !== '.js' || path.basename(filePath)[0] === '_') {
+			return false;
+		}
+
+		// Check if the entire path matches a pattern
+		if (multimatch(matchable(filePath), initialPatterns).length === 1) {
+			return true;
+		}
+
+		// Check if the path contains any directory components
+		const dirname = path.dirname(filePath);
+		if (dirname === '.') {
+			return false;
+		}
+
+		// Compute all possible subpaths. Note that the dirname is assumed to be
+		// relative to the working directory, without a leading `./`.
+		const subpaths = dirname.split(/[\\/]/).reduce((subpaths, component) =&gt; {
+			const parent = subpaths[subpaths.length - 1];
+
+			if (parent) {
+				// Always use `/`` to makes multimatch consistent across platforms
+				subpaths.push(`${parent}/${component}`);
+			} else {
+				subpaths.push(component);
+			}
+
+			return subpaths;
+		}, []);
+
+		// Check if any of the possible subpaths match a pattern. If so, generate a
+		// new pattern with **/*.js.
+		const recursivePatterns = subpaths
+			.filter(subpath =&gt; multimatch(subpath, initialPatterns).length === 1)
+			// Always use `/` to makes multimatch consistent across platforms
+			.map(subpath =&gt; `${subpath}/**/*.js`);
+
+		// See if the entire path matches any of the subpaths patterns, taking the
+		// excludePatterns into account. This mimicks the behavior in api.js
+		return multimatch(matchable(filePath), recursivePatterns.concat(excludePattern ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.enhance_assert" id="apidoc.element.ava.enhance_assert">
+        function <span class="apidocSignatureSpan">ava.</span>enhance_assert
+        <span class="apidocSignatureSpan">('empower-core')</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">opts =&gt; {
+	const empower = require('empower-core');
+	const enhanced = empower(opts.assert, {
+		destructive: false,
+		onError: opts.onError,
+		onSuccess: opts.onSuccess,
+		patterns: PATTERNS,
+		wrapOnlyPatterns: NON_ENHANCED_PATTERNS,
+		bindReceiver: false
+	});
+
+	return enhanced;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.runner" id="apidoc.element.ava.runner">
+        function <span class="apidocSignatureSpan">ava.</span>runner
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Runner extends EventEmitter {
+	constructor(options) {
+		super();
+
+		options = options || {};
+
+		this.results = [];
+		this.tests = new TestCollection();
+		this.hasStarted = false;
+		this._bail = options.bail;
+		this._serial = options.serial;
+		this._match = options.match || [];
+		this._addTestResult = this._addTestResult.bind(this);
+		this._buildStats = this._buildStats.bind(this);
+	}
+	_addTest(title, opts, fn, args) {
+		if (args) {
+			if (fn.title) {
+				title = fn.title.apply(fn, [title || ''].concat(args));
+			}
+
+			fn = wrapFunction(fn, args);
+		}
+
+		if (opts.type === 'test' &amp;&amp; this._match.length &gt; 0) {
+			opts.exclusive = title !== null &amp;&amp; matcher([title], this._match).length === 1;
+		}
+
+		const validationError = validateTest(title, fn, opts);
+		if (validationError !== null) {
+			throw new TypeError(validationError);
+		}
+
+		if (opts.todo) {
+			fn = noop;
+		}
+
+		this.tests.add({
+			metadata: opts,
+			fn,
+			title
+		});
+	}
+	_addTestResult(result) {
+		const test = result.result;
+		const props = {
+			duration: test.duration,
+			title: test.title,
+			error: result.reason,
+			type: test.metadata.type,
+			skip: test.metadata.skipped,
+			todo: test.metadata.todo,
+			failing: test.metadata.failing
+		};
+
+		this.results.push(result);
+		this.emit('test', props);
+	}
+	_buildStats() {
+		const stats = {
+			testCount: 0,
+			skipCount: 0,
+			todoCount: 0
+		};
+
+		this.results
+			.map(result =&gt; {
+				return result.result;
+			})
+			.filter(test =&gt; {
+				return test.metadata.type === 'test';
+			})
+			.forEach(test =&gt; {
+				stats.testCount++;
+
+				if (test.metadata.skipped) {
+					stats.skipCount++;
+				}
+
+				if (test.metadata.todo) {
+					stats.todoCount++;
+				}
+			});
+
+		stats.failCount = this.results
+			.filter(result =&gt; {
+				return result.passed === false;
+			})
+			.length;
+
+		stats.knownFailureCount = this.results
+			.filter(result =&gt; {
+				return result.passed === true &amp;&amp; result.result.metadata.failing;
+			})
+			.length;
+
+		stats.passCount = stats.testCount - stats.failCount - stats.skipCount - stats.todoCount;
+
+		return stats;
+	}
+	run(options) {
+		if (options.runOnlyExclusive &amp;&amp; !this.tests.hasExclusive) {
+			return Promise.resolve(null);
+		}
+
+		this.tests.on('test', this._addTestResult);
+
+		this.hasStarted = true;
+
+		return Promise.resolve(this.tests.build(this._bail).run()).then(this._buildStats);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava._iron_node" id="apidoc.module.ava._iron_node">module ava._iron_node</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava._iron_node.workSpaceDirectory" id="apidoc.element.ava._iron_node.workSpaceDirectory">
+        function <span class="apidocSignatureSpan">ava._iron_node.</span>workSpaceDirectory
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">workSpaceDirectory = function () {
+		return __dirname;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava.assert" id="apidoc.module.ava.assert">module ava.assert</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava.assert._snapshot" id="apidoc.element.ava.assert._snapshot">
+        function <span class="apidocSignatureSpan">ava.assert.</span>_snapshot
+        <span class="apidocSignatureSpan">(tree, optionalMessage, match, snapshotStateGetter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_snapshot = function (tree, optionalMessage, match, snapshotStateGetter) {
+	// Set defaults - this allows tests to mock deps easily
+	const toMatchSnapshot = match || jestSnapshot.toMatchSnapshot;
+	const getState = snapshotStateGetter || snapshotState.get;
+
+	const state = getState();
+
+	const context = {
+		dontThrow() {},
+		currentTestName: this.title,
+		snapshotState: state
+	};
+
+	// Symbols can't be serialized and saved in a snapshot, that's why tree
+	// is saved in the `__ava_react_jsx` prop, so that JSX can be detected later
+	const serializedTree = tree.$$typeof === Symbol.for('react.test.json') ? {__ava_react_jsx: tree} : tree; // eslint-disable-line
+ camelcase
+	const result = toMatchSnapshot.call(context, JSON.stringify(serializedTree));
+
+	let message = 'Please check your code or --update-snapshots';
+
+	if (optionalMessage) {
+		message += '\n\n' + indentString(optionalMessage, 2);
+	}
+
+	state.save();
+
+	let expected;
+
+	if (result.expected) {
+		// JSON in a snapshot is surrounded with `"`, because jest-snapshot
+		// serializes snapshot values too, so it ends up double JSON encoded
+		expected = JSON.parse(result.expected.slice(1).slice(0, -1));
+		// Define a `$$typeof` symbol, so that pretty-format detects it as React tree
+		if (expected.__ava_react_jsx) { // eslint-disable-line camelcase
+			expected = expected.__ava_react_jsx; // eslint-disable-line camelcase
+			Object.defineProperty(expected, '$$typeof', {value: Symbol.for('react.test.json')});
+		}
+	}
+
+	test(result.pass, create(tree, expected, 'snapshot', message, x.snapshot));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.assert.deepEqual" id="apidoc.element.ava.assert.deepEqual">
+        function <span class="apidocSignatureSpan">ava.assert.</span>deepEqual
+        <span class="apidocSignatureSpan">(val, expected, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(val, expected, msg) =&gt; {
+	test(deepEqual(val, expected), create(val, expected, '===', msg, x.deepEqual));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Test syntax
+
+```js
+import test from 'ava';
+
+test(t =&gt; {
+	t.<span class="apidocCodeKeywordSpan">deepEqual</span>([1, 2], [1, 2]);
+});
+```
+
+## Usage
+
+### Add AVA to your project
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.assert.fail" id="apidoc.element.ava.assert.fail">
+        function <span class="apidocSignatureSpan">ava.assert.</span>fail
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">msg =&gt; {
+	msg = msg || 'Test failed via t.fail()';
+	test(false, create(false, false, 'fail', msg, x.fail));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Running specific tests
+
+During development it can be helpful to only run a few specific tests. This can be accomplished using the `.only` modifier:
+
+```js
+test('will not be run', t =&gt; {
+	t.<span class="apidocCodeKeywordSpan">fail</span>();
+});
+
+test.only('will be run', t =&gt; {
+	t.pass();
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.assert.false" id="apidoc.element.ava.assert.false">
+        function <span class="apidocSignatureSpan">ava.assert.</span>false
+        <span class="apidocSignatureSpan">(val, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(val, msg) =&gt; {
+	test(val === false, create(val, false, '===', msg, x.false));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Assert that `value` is falsy.
+
+### `.true(value, [message])`
+
+Assert that `value` is `true`.
+
+### `.<span class="apidocCodeKeywordSpan">false</span>(value, [message])`
+
+Assert that `value` is `false`.
+
+### `.is(value, expected, [message])`
+
+Assert that `value` is equal to `expected`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.assert.falsy" id="apidoc.element.ava.assert.falsy">
+        function <span class="apidocSignatureSpan">ava.assert.</span>falsy
+        <span class="apidocSignatureSpan">(val, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(val, msg) =&gt; {
+	test(!val, create(val, false, '==', msg, x.falsy));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Failing assertion.
+
+### `.truthy(value, [message])`
+
+Assert that `value` is truthy.
+
+### `.<span class="apidocCodeKeywordSpan">falsy</span>(value, [message])`
+
+Assert that `value` is falsy.
+
+### `.true(value, [message])`
+
+Assert that `value` is `true`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.assert.ifError" id="apidoc.element.ava.assert.ifError">
+        function <span class="apidocSignatureSpan">ava.assert.</span>ifError
+        <span class="apidocSignatureSpan">(err, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(err, msg) =&gt; {
+	test(!err, create(err, 'Error', '!==', msg, x.ifError));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Assert that `contents` matches `regex`.
+
+### `.notRegex(contents, regex, [message])`
+
+Assert that `contents` does not match `regex`.
+
+### `.<span class="apidocCodeKeywordSpan">ifError</span>(error, [message])`
+
+Assert that `error` is falsy.
+
+### `.snapshot(contents, [message])`
+
+Make a snapshot of the stringified `contents`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.assert.is" id="apidoc.element.ava.assert.is">
+        function <span class="apidocSignatureSpan">ava.assert.</span>is
+        <span class="apidocSignatureSpan">(val, expected, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(val, expected, msg) =&gt; {
+	test(val === expected, create(val, expected, '===', msg, x.is));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+test('foo', t =&gt; {
+	t.pass();
+});
+
+test('bar', async t =&gt; {
+	const bar = Promise.resolve('bar');
+
+	t.<span class="apidocCodeKeywordSpan">is</span>(await bar, 'bar');
+});
+```
+
+### Run it
+
+```console
+$ npm test
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.assert.not" id="apidoc.element.ava.assert.not">
+        function <span class="apidocSignatureSpan">ava.assert.</span>not
+        <span class="apidocSignatureSpan">(val, expected, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(val, expected, msg) =&gt; {
+	test(val !== expected, create(val, expected, '!==', msg, x.not));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Assert that `value` is `false`.
+
+### `.is(value, expected, [message])`
+
+Assert that `value` is equal to `expected`.
+
+### `.<span class="apidocCodeKeywordSpan">not</span>(value, expected, [message])`
+
+Assert that `value` is not equal to `expected`.
+
+### `.deepEqual(value, expected, [message])`
+
+Assert that `value` is deep equal to `expected`. This is based on [Lodash' `isEqual()`](https://lodash.com/docs/4.17.4#isEqual
+):
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.assert.notDeepEqual" id="apidoc.element.ava.assert.notDeepEqual">
+        function <span class="apidocSignatureSpan">ava.assert.</span>notDeepEqual
+        <span class="apidocSignatureSpan">(val, expected, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(val, expected, msg) =&gt; {
+	test(!deepEqual(val, expected), create(val, expected, '!==', msg, x.notDeepEqual));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Assert that `value` is deep equal to `expected`. This is based on [Lodash' `isEqual()`](https://lodash.com/docs/4.17.4#isEqual
+):
+
+&gt; Performs a deep comparison between two values to determine if they are equivalent.
+&gt;
+&gt; *Note*: This method supports comparing arrays, array buffers, booleans, date objects, error objects, maps, numbers, `Object
+` objects, regexes, sets, strings, symbols, and typed arrays. `Object` objects are compared by their own, not inherited, enumerable
+ properties. Functions and DOM nodes are compared by strict equality, i.e. `===`.
+
+### `.<span class="apidocCodeKeywordSpan">notDeepEqual</span>(value, expected, [message])`
+
+Assert that `value` is not deep equal to `expected`. The inverse of `.deepEqual()`.
+
+### `.throws(function|promise, [error, [message]])`
+
+Assert that `function` throws an error, or `promise` rejects with an error.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.assert.notRegex" id="apidoc.element.ava.assert.notRegex">
+        function <span class="apidocSignatureSpan">ava.assert.</span>notRegex
+        <span class="apidocSignatureSpan">(contents, regex, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(contents, regex, msg) =&gt; {
+	test(!regex.test(contents), create(regex, contents, '!==', msg, x.notRegex));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Assert that `function` does not throw an error or that `promise` does not reject with an error.
+
+### `.regex(contents, regex, [message])`
+
+Assert that `contents` matches `regex`.
+
+### `.<span class="apidocCodeKeywordSpan">notRegex</span>(contents, regex, [message])`
+
+Assert that `contents` does not match `regex`.
+
+### `.ifError(error, [message])`
+
+Assert that `error` is falsy.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.assert.notThrows" id="apidoc.element.ava.assert.notThrows">
+        function <span class="apidocSignatureSpan">ava.assert.</span>notThrows
+        <span class="apidocSignatureSpan">(fn, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(fn, msg) =&gt; {
+	if (isObservable(fn)) {
+		fn = observableToPromise(fn);
+	}
+
+	if (isPromise(fn)) {
+		return fn
+			.catch(err =&gt; {
+				x.notThrows(() =&gt; {
+					throw err;
+				}, msg);
+			});
+	}
+
+	if (typeof fn !== 'function') {
+		throw new TypeError('t.notThrows must be called with a function, Promise, or Observable');
+	}
+
+	try {
+		assert.doesNotThrow(fn, msg);
+	} catch (err) {
+		test(false, create(err.actual, err.expected, 'notThrows', err.message, x.notThrows));
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+test('rejects', async t =&gt; {
+	const error = await t.throws(promise);
+	t.is(error.message, 'ðŸ¦„');
+});
+```
+
+### `.<span class="apidocCodeKeywordSpan">notThrows</span>(function|promise, [message])`
+
+Assert that `function` does not throw an error or that `promise` does not reject with an error.
+
+### `.regex(contents, regex, [message])`
+
+Assert that `contents` matches `regex`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.assert.pass" id="apidoc.element.ava.assert.pass">
+        function <span class="apidocSignatureSpan">ava.assert.</span>pass
+        <span class="apidocSignatureSpan">(true, create(true, true, 'pass', msg, x.pass)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">msg =&gt; {
+	test(true, create(true, true, 'pass', msg, x.pass));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Create a file named `test.js` in the project root directory:
+
+```js
+import test from 'ava';
+
+test('foo', t =&gt; {
+	t.<span class="apidocCodeKeywordSpan">pass</span>();
+});
+
+test('bar', async t =&gt; {
+	const bar = Promise.resolve('bar');
+
+	t.is(await bar, 'bar');
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.assert.regex" id="apidoc.element.ava.assert.regex">
+        function <span class="apidocSignatureSpan">ava.assert.</span>regex
+        <span class="apidocSignatureSpan">(contents, regex, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(contents, regex, msg) =&gt; {
+	test(regex.test(contents), create(regex, contents, '===', msg, x.regex));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+### `.notThrows(function|promise, [message])`
+
+Assert that `function` does not throw an error or that `promise` does not reject with an error.
+
+### `.<span class="apidocCodeKeywordSpan">regex</span>(contents, regex, [message])`
+
+Assert that `contents` matches `regex`.
+
+### `.notRegex(contents, regex, [message])`
+
+Assert that `contents` does not match `regex`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.assert.snapshot" id="apidoc.element.ava.assert.snapshot">
+        function <span class="apidocSignatureSpan">ava.assert.</span>snapshot
+        <span class="apidocSignatureSpan">(tree, optionalMessage)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">snapshot = function (tree, optionalMessage) {
+	x._snapshot.call(this, tree, optionalMessage);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Assert that `contents` does not match `regex`.
+
+### `.ifError(error, [message])`
+
+Assert that `error` is falsy.
+
+### `.<span class="apidocCodeKeywordSpan">snapshot</span>(contents, [message])`
+
+Make a snapshot of the stringified `contents`.
+
+## Snapshot testing
+
+Snapshot testing comes as another kind of assertion and uses [jest-snapshot](https://facebook.github.io/jest/blog/2016/07/27/jest
+-14.html) under the hood.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.assert.throws" id="apidoc.element.ava.assert.throws">
+        function <span class="apidocSignatureSpan">ava.assert.</span>throws
+        <span class="apidocSignatureSpan">(fn, err, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(fn, err, msg) =&gt; {
+	if (isObservable(fn)) {
+		fn = observableToPromise(fn);
+	}
+
+	if (isPromise(fn)) {
+		return fn
+			.then(() =&gt; {
+				x.throws(noop, err, msg);
+			}, fnErr =&gt; {
+				return x.throws(() =&gt; {
+					throw fnErr;
+				}, err, msg);
+			});
+	}
+
+	if (typeof fn !== 'function') {
+		throw new TypeError('t.throws must be called with a function, Promise, or Observable');
+	}
+
+	try {
+		if (typeof err === 'string') {
+			const errMsg = err;
+			err = err =&gt; err.message === errMsg;
+		}
+
+		let result;
+
+		assert.throws(() =&gt; {
+			try {
+				fn();
+			} catch (err) {
+				result = err;
+				throw err;
+			}
+		}, err, msg);
+
+		return result;
+	} catch (err) {
+		test(false, create(err.actual, err.expected, 'throws', err.message, x.throws));
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+&gt;
+&gt; *Note*: This method supports comparing arrays, array buffers, booleans, date objects, error objects, maps, numbers, `Object
+` objects, regexes, sets, strings, symbols, and typed arrays. `Object` objects are compared by their own, not inherited, enumerable
+ properties. Functions and DOM nodes are compared by strict equality, i.e. `===`.
+
+### `.notDeepEqual(value, expected, [message])`
+
+Assert that `value` is not deep equal to `expected`. The inverse of `.deepEqual()`.
+
+### `.<span class="apidocCodeKeywordSpan">throws</span>(function|promise, [error, [message]])`
+
+Assert that `function` throws an error, or `promise` rejects with an error.
+
+`error` can be an error constructor, error message, regex matched against the error message, or validation function.
+
+Returns the error thrown by `function` or a promise for the rejection reason of the specified `promise`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.assert.true" id="apidoc.element.ava.assert.true">
+        function <span class="apidocSignatureSpan">ava.assert.</span>true
+        <span class="apidocSignatureSpan">(val, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(val, msg) =&gt; {
+	test(val === true, create(val, true, '===', msg, x.true));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+These won't:
+
+```js
+test(t =&gt; {
+	t.plan(2);
+
+	for (let i = 0; i &lt; 3; i++) {
+		t.<span class="apidocCodeKeywordSpan">true</span>(i &lt; 3);
+	}
+}); // Fails, 3 assertions are executed which is too many
+
+test(t =&gt; {
+	t.plan(1);
+
+	someAsyncFunction(() =&gt; {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.assert.truthy" id="apidoc.element.ava.assert.truthy">
+        function <span class="apidocSignatureSpan">ava.assert.</span>truthy
+        <span class="apidocSignatureSpan">(val, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(val, msg) =&gt; {
+	test(val, create(val, true, '==', msg, x.truthy));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Assertions
+
+Assertions are mixed into the [execution object](#t) provided to each test implementation:
+
+```js
+test(t =&gt; {
+	t.<span class="apidocCodeKeywordSpan">truthy</span>('unicorn'); // Assertion
+});
+```
+
+If multiple assertion failures are encountered within a single test, AVA will only display the *first* one.
+
+### `.pass([message])`
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava.ava_files" id="apidoc.module.ava.ava_files">module ava.ava_files</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava.ava_files.ava_files" id="apidoc.element.ava.ava_files.ava_files">
+        function <span class="apidocSignatureSpan">ava.</span>ava_files
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class AvaFiles {
+	constructor(options) {
+		options = options || {};
+
+		let files = (options.files || []).map(file =&gt; {
+			// `./` should be removed from the beginning of patterns because
+			// otherwise they won't match change events from Chokidar
+			if (file.slice(0, 2) === './') {
+				return file.slice(2);
+			}
+
+			return file;
+		});
+
+		if (files.length === 0) {
+			files = defaultIncludePatterns();
+		}
+
+		this.excludePatterns = defaultExcludePatterns();
+		this.files = files;
+		this.sources = options.sources || [];
+		this.cwd = options.cwd || process.cwd();
+
+		autoBind(this);
+	}
+	findTestFiles() {
+		return handlePaths(this.files, this.excludePatterns, {
+			cwd: this.cwd,
+			cache: Object.create(null),
+			statCache: Object.create(null),
+			realpathCache: Object.create(null),
+			symlinks: Object.create(null)
+		});
+	}
+	findTestHelpers() {
+		return handlePaths(defaultHelperPatterns(), ['!**/node_modules/**'], {
+			cwd: this.cwd,
+			includeUnderscoredFiles: true,
+			cache: Object.create(null),
+			statCache: Object.create(null),
+			realpathCache: Object.create(null),
+			symlinks: Object.create(null)
+		});
+	}
+	isSource(filePath) {
+		let mixedPatterns = [];
+		const defaultIgnorePatterns = getDefaultIgnorePatterns();
+		const overrideDefaultIgnorePatterns = [];
+
+		let hasPositivePattern = false;
+		this.sources.forEach(pattern =&gt; {
+			mixedPatterns.push(pattern);
+
+			// TODO: Why not just `pattern[0] !== '!'`?
+			if (!hasPositivePattern &amp;&amp; pattern[0] !== '!') {
+				hasPositivePattern = true;
+			}
+
+			// Extract patterns that start with an ignored directory. These need to be
+			// rematched separately.
+			if (defaultIgnore.indexOf(pattern.split('/')[0]) &gt;= 0) {
+				overrideDefaultIgnorePatterns.push(pattern);
+			}
+		});
+
+		// Same defaults as used for Chokidar
+		if (!hasPositivePattern) {
+			mixedPatterns = ['package.json', '**/*.js'].concat(mixedPatterns);
+		}
+
+		filePath = matchable(filePath);
+
+		// Ignore paths outside the current working directory.
+		// They can't be matched to a pattern.
+		if (/^\.\.\//.test(filePath)) {
+			return false;
+		}
+
+		const isSource = multimatch(filePath, mixedPatterns).length === 1;
+		if (!isSource) {
+			return false;
+		}
+
+		const isIgnored = multimatch(filePath, defaultIgnorePatterns).length === 1;
+		if (!isIgnored) {
+			return true;
+		}
+
+		const isErroneouslyIgnored = multimatch(filePath, overrideDefaultIgnorePatterns).length === 1;
+		if (isErroneouslyIgnored) {
+			return true;
+		}
+
+		return false;
+	}
+	isTest(filePath) {
+		const excludePatterns = this.excludePatterns;
+		const initialPatterns = this.files.concat(excludePatterns);
+
+		// Like in `api.js`, tests must be `.js` files and not start with `_`
+		if (path.extname(filePath) !== '.js' || path.basename(filePath)[0] === '_') {
+			return false;
+		}
+
+		// Check if the entire path matches a pattern
+		if (multimatch(matchable(filePath), initialPatterns).length === 1) {
+			return true;
+		}
+
+		// Check if the path contains any directory components
+		const dirname = path.dirname(filePath);
+		if (dirname === '.') {
+			return false;
+		}
+
+		// Compute all possible subpaths. Note that the dirname is assumed to be
+		// relative to the working directory, without a leading `./`.
+		const subpaths = dirname.split(/[\\/]/).reduce((subpaths, component) =&gt; {
+			const parent = subpaths[subpaths.length - 1];
+
+			if (parent) {
+				// Always use `/`` to makes multimatch consistent across platforms
+				subpaths.push(`${parent}/${component}`);
+			} else {
+				subpaths.push(component);
+			}
+
+			return subpaths;
+		}, []);
+
+		// Check if any of the possible subpaths match a pattern. If so, generate a
+		// new pattern with **/*.js.
+		const recursivePatterns = subpaths
+			.filter(subpath =&gt; multimatch(subpath, initialPatterns).length === 1)
+			// Always use `/` to makes multimatch consistent across platforms
+			.map(subpath =&gt; `${subpath}/**/*.js`);
+
+		// See if the entire path matches any of the subpaths patterns, taking the
+		// excludePatterns into account. This mimicks the behavior in api.js
+		return multimatch(matchable(filePath), recursivePatterns.concat(excludePattern ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.ava_files.defaultExcludePatterns" id="apidoc.element.ava.ava_files.defaultExcludePatterns">
+        function <span class="apidocSignatureSpan">ava.ava_files.</span>defaultExcludePatterns
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">() =&gt; [
+	'!**/node_modules/**',
+	'!**/fixtures/**',
+	'!**/helpers/**'
+]</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.ava_files.defaultIncludePatterns" id="apidoc.element.ava.ava_files.defaultIncludePatterns">
+        function <span class="apidocSignatureSpan">ava.ava_files.</span>defaultIncludePatterns
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">() =&gt; [
+	'test.js',
+	'test-*.js',
+	'test',
+	'**/__tests__',
+	'**/*.test.js'
+]</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava.babel_config" id="apidoc.module.ava.babel_config">module ava.babel_config</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava.babel_config.build" id="apidoc.element.ava.babel_config.build">
+        function <span class="apidocSignatureSpan">ava.babel_config.</span>build
+        <span class="apidocSignatureSpan">(babelConfig, powerAssert, filePath, code)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function build(babelConfig, powerAssert, filePath, code) {
+	babelConfig = validate(babelConfig);
+
+	let options;
+
+	if (babelConfig === 'default') {
+		options = {
+			babelrc: false,
+			presets: [stage4]
+		};
+	} else if (babelConfig === 'inherit') {
+		options = {
+			babelrc: true
+		};
+	} else {
+		options = {
+			babelrc: false
+		};
+
+		Object.assign(options, babelConfig);
+	}
+
+	const sourceMap = getSourceMap(filePath, code);
+
+	Object.assign(options, {
+		inputSourceMap: sourceMap,
+		filename: filePath,
+		sourceMaps: true,
+		ast: false
+	});
+
+	if (!options.presets) {
+		options.presets = [];
+	}
+	options.presets.push(makeTransformTestFiles(powerAssert));
+
+	return options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	_init() {
+		this.babel = require('babel-core');
+		return this._transform;
+	}
+	_transform(code, filePath, hash) {
+		code = code.toString();
+
+		const options = babelConfigHelper.<span class="apidocCodeKeywordSpan">build</span>(this.babelConfig, this.powerAssert, filePath
+, code);
+		const result = this.babel.transform(code, options);
+
+		// Save source map
+		const mapPath = path.join(this.cacheDirPath, `${hash}.js.map`);
+		fs.writeFileSync(mapPath, JSON.stringify(result.map));
+
+		// Append source map comment to transformed code
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.babel_config.validate" id="apidoc.element.ava.babel_config.validate">
+        function <span class="apidocSignatureSpan">ava.babel_config.</span>validate
+        <span class="apidocSignatureSpan">(conf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function validate(conf) {
+	if (conf === undefined || conf === null) {
+		conf = 'default';
+	}
+
+	// Check for valid babel config shortcuts (can be either `default` or `inherit`)
+	const isValidShortcut = conf === 'default' || conf === 'inherit';
+
+	if (!conf || (typeof conf === 'string' &amp;&amp; !isValidShortcut)) {
+		let message = colors.error(figures.cross);
+		message += ' Unexpected Babel configuration for AVA. ';
+		message += 'See ' + chalk.underline('https://github.com/avajs/ava#es2015-support') + ' for allowed values.';
+
+		throw new Error(message);
+	}
+
+	return conf;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+class CachingPrecompiler {
+	constructor(options) {
+		autoBind(this);
+
+		options = options || {};
+
+		this.babelConfig = babelConfigHelper.<span class="apidocCodeKeywordSpan">validate</span>(options.babel);
+		this.cacheDirPath = options.path;
+		this.powerAssert = Boolean(options.powerAssert);
+		this.fileHashes = {};
+		this.transform = this._createTransform();
+	}
+	precompileFile(filePath) {
+		if (!this.fileHashes[filePath]) {
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava.colors" id="apidoc.module.ava.colors">module ava.colors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava.colors.duration" id="apidoc.element.ava.colors.duration">
+        function <span class="apidocSignatureSpan">ava.colors.</span>duration
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">duration = function () {
+		return applyStyle.apply(builder, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.colors.error" id="apidoc.element.ava.colors.error">
+        function <span class="apidocSignatureSpan">ava.colors.</span>error
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function () {
+		return applyStyle.apply(builder, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		conf = 'default';
+	}
+
+	// Check for valid babel config shortcuts (can be either `default` or `inherit`)
+	const isValidShortcut = conf === 'default' || conf === 'inherit';
+
+	if (!conf || (typeof conf === 'string' &amp;&amp; !isValidShortcut)) {
+		let message = colors.<span class="apidocCodeKeywordSpan">error</span>(figures.cross);
+		message += ' Unexpected Babel configuration for AVA. ';
+		message += 'See ' + chalk.underline('https://github.com/avajs/ava#es2015-support') + ' for allowed values
+.';
+
+		throw new Error(message);
+	}
+
+	return conf;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.colors.errorSource" id="apidoc.element.ava.colors.errorSource">
+        function <span class="apidocSignatureSpan">ava.colors.</span>errorSource
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">errorSource = function () {
+		return applyStyle.apply(builder, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.colors.errorStack" id="apidoc.element.ava.colors.errorStack">
+        function <span class="apidocSignatureSpan">ava.colors.</span>errorStack
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">errorStack = function () {
+		return applyStyle.apply(builder, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.colors.information" id="apidoc.element.ava.colors.information">
+        function <span class="apidocSignatureSpan">ava.colors.</span>information
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">information = function () {
+		return applyStyle.apply(builder, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.colors.pass" id="apidoc.element.ava.colors.pass">
+        function <span class="apidocSignatureSpan">ava.colors.</span>pass
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pass = function () {
+		return applyStyle.apply(builder, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Create a file named `test.js` in the project root directory:
+
+```js
+import test from 'ava';
+
+test('foo', t =&gt; {
+	t.<span class="apidocCodeKeywordSpan">pass</span>();
+});
+
+test('bar', async t =&gt; {
+	const bar = Promise.resolve('bar');
+
+	t.is(await bar, 'bar');
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.colors.skip" id="apidoc.element.ava.colors.skip">
+        function <span class="apidocSignatureSpan">ava.colors.</span>skip
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">skip = function () {
+		return applyStyle.apply(builder, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Skipping tests
+
+Sometimes failing tests can be hard to fix. You can tell AVA to skip these tests using the `.skip` modifier. They'll still
+be shown in the output (as having been skipped) but are never run.
+
+```js
+test.<span class="apidocCodeKeywordSpan">skip</span>('will not be run', t =&gt; {
+	t.fail();
+});
+```
+
+You must specify the implementation function.
+
+### Test placeholders ("todo")
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.colors.stack" id="apidoc.element.ava.colors.stack">
+        function <span class="apidocSignatureSpan">ava.colors.</span>stack
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stack = function () {
+		return applyStyle.apply(builder, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.colors.title" id="apidoc.element.ava.colors.title">
+        function <span class="apidocSignatureSpan">ava.colors.</span>title
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">title = function () {
+		return applyStyle.apply(builder, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.colors.todo" id="apidoc.element.ava.colors.todo">
+        function <span class="apidocSignatureSpan">ava.colors.</span>todo
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">todo = function () {
+		return applyStyle.apply(builder, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+You must specify the implementation function.
+
+### Test placeholders ("todo")
+
+You can use the `.todo` modifier when you're planning to write a test. Like skipped tests these placeholders are shown in the
+ output. They only require a title; you cannot specify the implementation function.
+
+```js
+test.<span class="apidocCodeKeywordSpan">todo</span>('will think about writing this later');
+```
+
+### Failing tests
+
+You can use the `.failing` modifier to document issues with your code that need to be fixed. Failing tests are run just like normal
+ ones, but they are expected to fail, and will not break your build when they do. If a test marked as failing actually passes, it
+ will be reported as an error and fail the build with a helpful message instructing you to remove the `.failing` modifier.
+
+This allows you to merge `.failing` tests before a fix is implemented without breaking CI. This is a great way to recognize good
+ bug report PR's with a commit credit, even if the reporter is unable to actually fix the problem.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava.enhance_assert" id="apidoc.module.ava.enhance_assert">module ava.enhance_assert</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava.enhance_assert.enhance_assert" id="apidoc.element.ava.enhance_assert.enhance_assert">
+        function <span class="apidocSignatureSpan">ava.</span>enhance_assert
+        <span class="apidocSignatureSpan">('empower-core')</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">opts =&gt; {
+	const empower = require('empower-core');
+	const enhanced = empower(opts.assert, {
+		destructive: false,
+		onError: opts.onError,
+		onSuccess: opts.onSuccess,
+		patterns: PATTERNS,
+		wrapOnlyPatterns: NON_ENHANCED_PATTERNS,
+		bindReceiver: false
+	});
+
+	return enhanced;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.enhance_assert.formatter" id="apidoc.element.ava.enhance_assert.formatter">
+        function <span class="apidocSignatureSpan">ava.enhance_assert.</span>formatter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">() =&gt; {
+	return context =&gt; {
+		const ast = JSON.parse(context.source.ast);
+		const tokens = JSON.parse(context.source.tokens);
+		const args = context.args[0].events;
+
+		return args
+			.map(arg =&gt; {
+				const range = getNode(ast, arg.espath).range;
+				return [computeStatement(tokens, range), arg.value];
+			})
+			.reverse();
+	};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava.globals" id="apidoc.module.ava.globals">module ava.globals</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava.globals.clearTimeout" id="apidoc.element.ava.globals.clearTimeout">
+        function <span class="apidocSignatureSpan">ava.globals.</span>clearTimeout
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clearTimeout = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.globals.now" id="apidoc.element.ava.globals.now">
+        function <span class="apidocSignatureSpan">ava.globals.</span>now
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function now() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.globals.setImmediate" id="apidoc.element.ava.globals.setImmediate">
+        function <span class="apidocSignatureSpan">ava.globals.</span>setImmediate
+        <span class="apidocSignatureSpan">(callback, arg1, arg2, arg3)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setImmediate = function (callback, arg1, arg2, arg3) {
+  if (typeof callback !== 'function') {
+    throw new TypeError('"callback" argument must be a function');
+  }
+
+  var i, args;
+
+  switch (arguments.length) {
+    // fast cases
+    case 1:
+      break;
+    case 2:
+      args = [arg1];
+      break;
+    case 3:
+      args = [arg1, arg2];
+      break;
+    default:
+      args = [arg1, arg2, arg3];
+      for (i = 4; i &lt; arguments.length; i++)
+        // extend array dynamically, makes .apply run much faster in v6.0.0
+        args[i - 1] = arguments[i];
+      break;
+  }
+  return createImmediate(args, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.globals.setTimeout" id="apidoc.element.ava.globals.setTimeout">
+        function <span class="apidocSignatureSpan">ava.globals.</span>setTimeout
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setTimeout = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava.runner" id="apidoc.module.ava.runner">module ava.runner</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava.runner.runner" id="apidoc.element.ava.runner.runner">
+        function <span class="apidocSignatureSpan">ava.</span>runner
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Runner extends EventEmitter {
+	constructor(options) {
+		super();
+
+		options = options || {};
+
+		this.results = [];
+		this.tests = new TestCollection();
+		this.hasStarted = false;
+		this._bail = options.bail;
+		this._serial = options.serial;
+		this._match = options.match || [];
+		this._addTestResult = this._addTestResult.bind(this);
+		this._buildStats = this._buildStats.bind(this);
+	}
+	_addTest(title, opts, fn, args) {
+		if (args) {
+			if (fn.title) {
+				title = fn.title.apply(fn, [title || ''].concat(args));
+			}
+
+			fn = wrapFunction(fn, args);
+		}
+
+		if (opts.type === 'test' &amp;&amp; this._match.length &gt; 0) {
+			opts.exclusive = title !== null &amp;&amp; matcher([title], this._match).length === 1;
+		}
+
+		const validationError = validateTest(title, fn, opts);
+		if (validationError !== null) {
+			throw new TypeError(validationError);
+		}
+
+		if (opts.todo) {
+			fn = noop;
+		}
+
+		this.tests.add({
+			metadata: opts,
+			fn,
+			title
+		});
+	}
+	_addTestResult(result) {
+		const test = result.result;
+		const props = {
+			duration: test.duration,
+			title: test.title,
+			error: result.reason,
+			type: test.metadata.type,
+			skip: test.metadata.skipped,
+			todo: test.metadata.todo,
+			failing: test.metadata.failing
+		};
+
+		this.results.push(result);
+		this.emit('test', props);
+	}
+	_buildStats() {
+		const stats = {
+			testCount: 0,
+			skipCount: 0,
+			todoCount: 0
+		};
+
+		this.results
+			.map(result =&gt; {
+				return result.result;
+			})
+			.filter(test =&gt; {
+				return test.metadata.type === 'test';
+			})
+			.forEach(test =&gt; {
+				stats.testCount++;
+
+				if (test.metadata.skipped) {
+					stats.skipCount++;
+				}
+
+				if (test.metadata.todo) {
+					stats.todoCount++;
+				}
+			});
+
+		stats.failCount = this.results
+			.filter(result =&gt; {
+				return result.passed === false;
+			})
+			.length;
+
+		stats.knownFailureCount = this.results
+			.filter(result =&gt; {
+				return result.passed === true &amp;&amp; result.result.metadata.failing;
+			})
+			.length;
+
+		stats.passCount = stats.testCount - stats.failCount - stats.skipCount - stats.todoCount;
+
+		return stats;
+	}
+	run(options) {
+		if (options.runOnlyExclusive &amp;&amp; !this.tests.hasExclusive) {
+			return Promise.resolve(null);
+		}
+
+		this.tests.on('test', this._addTestResult);
+
+		this.hasStarted = true;
+
+		return Promise.resolve(this.tests.build(this._bail).run()).then(this._buildStats);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava.runner.prototype" id="apidoc.module.ava.runner.prototype">module ava.runner.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava.runner.prototype.after" id="apidoc.element.ava.runner.prototype.after">
+        function <span class="apidocSignatureSpan">ava.runner.prototype.</span>after
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wrappedFn() {
+			var args = new Array(arguments.length);
+			for (var i = 0; i &lt; args.length; i++) {
+				args[i] = arguments[i];
+			}
+			if (spread) {
+				args.unshift(wrappedOpts());
+			} else {
+				args = [wrappedOpts(), args];
+			}
+			return fn.apply(ctx || this, args);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+### Before &amp; after hooks
+
+AVA lets you register hooks that are run before and after your tests. This allows you to run setup and/or teardown code.
+
+`test.before()` registers a hook to be run before the first test in your test file. Similarly `test.<span class="apidocCodeKeywordSpan
+">after</span>()` registers a hook to be run after the last test. Use `test.after.always()` to register a hook that will **always
+** run once your tests and other hooks complete. `.always()` hooks run regardless of whether there were earlier failures, so they
+ are ideal for cleanup tasks. There are two exceptions to this however. If you use `--fail-fast` AVA will stop testing as soon as
+ a failure occurs, and it won't run any hooks including the `.always()` hooks. Uncaught exceptions will crash your tests, possibly
+ preventing `.always()` hooks from running.
+
+`test.beforeEach()` registers a hook to be run before each test in your test file. Similarly `test.afterEach()` a hook to be run
+ after each test. Use `test.afterEach.always()` to register an after hook that is called even if other test hooks, or the test itself
+, fail. `.always()` hooks are ideal for cleanup tasks.
+
+**Note**: If the `--fail-fast` flag is specified, AVA will stop after the first test failure and the `.always` hook will **not**
+run.
+
+Like `test()` these methods take an optional title and a callback function. The title is shown if your hook fails to execute. The
+ callback is called with an [execution object](#t).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.runner.prototype.afterEach" id="apidoc.element.ava.runner.prototype.afterEach">
+        function <span class="apidocSignatureSpan">ava.runner.prototype.</span>afterEach
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wrappedFn() {
+			var args = new Array(arguments.length);
+			for (var i = 0; i &lt; args.length; i++) {
+				args[i] = arguments[i];
+			}
+			if (spread) {
+				args.unshift(wrappedOpts());
+			} else {
+				args = [wrappedOpts(), args];
+			}
+			return fn.apply(ctx || this, args);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Before &amp; after hooks
+
+AVA lets you register hooks that are run before and after your tests. This allows you to run setup and/or teardown code.
+
+`test.before()` registers a hook to be run before the first test in your test file. Similarly `test.after()` registers a hook to
+ be run after the last test. Use `test.after.always()` to register a hook that will **always** run once your tests and other hooks
+ complete. `.always()` hooks run regardless of whether there were earlier failures, so they are ideal for cleanup tasks. There are
+ two exceptions to this however. If you use `--fail-fast` AVA will stop testing as soon as a failure occurs, and it won't run
+ any hooks including the `.always()` hooks. Uncaught exceptions will crash your tests, possibly preventing `.always()` hooks from
+ running.
+
+`test.beforeEach()` registers a hook to be run before each test in your test file. Similarly `test.<span class="apidocCodeKeywordSpan
+">afterEach</span>()` a hook to be run after each test. Use `test.afterEach.always()` to register an after hook that is called even
+ if other test hooks, or the test itself, fail. `.always()` hooks are ideal for cleanup tasks.
+
+**Note**: If the `--fail-fast` flag is specified, AVA will stop after the first test failure and the `.always` hook will **not**
+run.
+
+Like `test()` these methods take an optional title and a callback function. The title is shown if your hook fails to execute. The
+ callback is called with an [execution object](#t).
+
+`before` hooks execute before `beforeEach` hooks. `afterEach` hooks execute before `after` hooks. Within their category the hooks
+ execute in the order they were defined.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.runner.prototype.always" id="apidoc.element.ava.runner.prototype.always">
+        function <span class="apidocSignatureSpan">ava.runner.prototype.</span>always
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wrappedFn() {
+			var args = new Array(arguments.length);
+			for (var i = 0; i &lt; args.length; i++) {
+				args[i] = arguments[i];
+			}
+			if (spread) {
+				args.unshift(wrappedOpts());
+			} else {
+				args = [wrappedOpts(), args];
+			}
+			return fn.apply(ctx || this, args);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+### Before &amp; after hooks
+
+AVA lets you register hooks that are run before and after your tests. This allows you to run setup and/or teardown code.
+
+`test.before()` registers a hook to be run before the first test in your test file. Similarly `test.after()` registers a hook to
+ be run after the last test. Use `test.after.<span class="apidocCodeKeywordSpan">always</span>()` to register a hook that will **
+always** run once your tests and other hooks complete. `.always()` hooks run regardless of whether there were earlier failures,
+so they are ideal for cleanup tasks. There are two exceptions to this however. If you use `--fail-fast` AVA will stop testing as
+ soon as a failure occurs, and it won't run any hooks including the `.always()` hooks. Uncaught exceptions will crash your
+tests, possibly preventing `.always()` hooks from running.
+
+`test.beforeEach()` registers a hook to be run before each test in your test file. Similarly `test.afterEach()` a hook to be run
+ after each test. Use `test.afterEach.always()` to register an after hook that is called even if other test hooks, or the test itself
+, fail. `.always()` hooks are ideal for cleanup tasks.
+
+**Note**: If the `--fail-fast` flag is specified, AVA will stop after the first test failure and the `.always` hook will **not**
+run.
+
+Like `test()` these methods take an optional title and a callback function. The title is shown if your hook fails to execute. The
+ callback is called with an [execution object](#t).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.runner.prototype.before" id="apidoc.element.ava.runner.prototype.before">
+        function <span class="apidocSignatureSpan">ava.runner.prototype.</span>before
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wrappedFn() {
+			var args = new Array(arguments.length);
+			for (var i = 0; i &lt; args.length; i++) {
+				args[i] = arguments[i];
+			}
+			if (spread) {
+				args.unshift(wrappedOpts());
+			} else {
+				args = [wrappedOpts(), args];
+			}
+			return fn.apply(ctx || this, args);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+### Before &amp; after hooks
+
+AVA lets you register hooks that are run before and after your tests. This allows you to run setup and/or teardown code.
+
+`test.<span class="apidocCodeKeywordSpan">before</span>()` registers a hook to be run before the first test in your test file. Similarly
+ `test.after()` registers a hook to be run after the last test. Use `test.after.always()` to register a hook that will **always**
+run once your tests and other hooks complete. `.always()` hooks run regardless of whether there were earlier failures, so they are
+ ideal for cleanup tasks. There are two exceptions to this however. If you use `--fail-fast` AVA will stop testing as soon as a
+failure occurs, and it won't run any hooks including the `.always()` hooks. Uncaught exceptions will crash your tests, possibly
+ preventing `.always()` hooks from running.
+
+`test.beforeEach()` registers a hook to be run before each test in your test file. Similarly `test.afterEach()` a hook to be run
+ after each test. Use `test.afterEach.always()` to register an after hook that is called even if other test hooks, or the test itself
+, fail. `.always()` hooks are ideal for cleanup tasks.
+
+**Note**: If the `--fail-fast` flag is specified, AVA will stop after the first test failure and the `.always` hook will **not**
+run.
+
+Like `test()` these methods take an optional title and a callback function. The title is shown if your hook fails to execute. The
+ callback is called with an [execution object](#t).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.runner.prototype.beforeEach" id="apidoc.element.ava.runner.prototype.beforeEach">
+        function <span class="apidocSignatureSpan">ava.runner.prototype.</span>beforeEach
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wrappedFn() {
+			var args = new Array(arguments.length);
+			for (var i = 0; i &lt; args.length; i++) {
+				args[i] = arguments[i];
+			}
+			if (spread) {
+				args.unshift(wrappedOpts());
+			} else {
+				args = [wrappedOpts(), args];
+			}
+			return fn.apply(ctx || this, args);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Before &amp; after hooks
+
+AVA lets you register hooks that are run before and after your tests. This allows you to run setup and/or teardown code.
+
+`test.before()` registers a hook to be run before the first test in your test file. Similarly `test.after()` registers a hook to
+ be run after the last test. Use `test.after.always()` to register a hook that will **always** run once your tests and other hooks
+ complete. `.always()` hooks run regardless of whether there were earlier failures, so they are ideal for cleanup tasks. There are
+ two exceptions to this however. If you use `--fail-fast` AVA will stop testing as soon as a failure occurs, and it won't run
+ any hooks including the `.always()` hooks. Uncaught exceptions will crash your tests, possibly preventing `.always()` hooks from
+ running.
+
+`test.<span class="apidocCodeKeywordSpan">beforeEach</span>()` registers a hook to be run before each test in your test file. Similarly
+ `test.afterEach()` a hook to be run after each test. Use `test.afterEach.always()` to register an after hook that is called even
+ if other test hooks, or the test itself, fail. `.always()` hooks are ideal for cleanup tasks.
+
+**Note**: If the `--fail-fast` flag is specified, AVA will stop after the first test failure and the `.always` hook will **not**
+run.
+
+Like `test()` these methods take an optional title and a callback function. The title is shown if your hook fails to execute. The
+ callback is called with an [execution object](#t).
+
+`before` hooks execute before `beforeEach` hooks. `afterEach` hooks execute before `after` hooks. Within their category the hooks
+ execute in the order they were defined.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.runner.prototype.cb" id="apidoc.element.ava.runner.prototype.cb">
+        function <span class="apidocSignatureSpan">ava.runner.prototype.</span>cb
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wrappedFn() {
+			var args = new Array(arguments.length);
+			for (var i = 0; i &lt; args.length; i++) {
+				args[i] = arguments[i];
+			}
+			if (spread) {
+				args.unshift(wrappedOpts());
+			} else {
+				args = [wrappedOpts(), args];
+			}
+			return fn.apply(ctx || this, args);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Documentation
+
+Tests are run concurrently. You can specify synchronous and asynchronous tests. Tests are considered synchronous unless you return
+ a promise or [observable](https://github.com/zenparsing/zen-observable).
+
+We *highly* recommend the use of [async functions](#async-function-support). They make asynchronous code concise and readable, and
+ they implicitly return a promise so you don't have to.
+
+If you're unable to use promises or observables, you may enable "callback mode" by defining your test with `test.&lt;
+span class="apidocCodeKeywordSpan"&gt;cb([title], fn)`. Tests declared this way **must** be manually ended with `t.end()`. This
+ mode is mainly intended for testing callback-style APIs. However, we would strongly recommend [promisifying](https://github.com
+/sindresorhus/pify) callback-style APIs instead of using "callback mode", as this results in more correct and readable
+ tests.
+
+You must define all tests synchronously. They can't be defined inside `setTimeout`, `setImmediate`, etc.
+
+AVA tries to run test files with their current working directory set to the directory that contains your `package.json` file.
+
+### Creating tests
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.runner.prototype.failing" id="apidoc.element.ava.runner.prototype.failing">
+        function <span class="apidocSignatureSpan">ava.runner.prototype.</span>failing
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wrappedFn() {
+			var args = new Array(arguments.length);
+			for (var i = 0; i &lt; args.length; i++) {
+				args[i] = arguments[i];
+			}
+			if (spread) {
+				args.unshift(wrappedOpts());
+			} else {
+				args = [wrappedOpts(), args];
+			}
+			return fn.apply(ctx || this, args);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+You can use the `.failing` modifier to document issues with your code that need to be fixed. Failing tests are run just like normal
+ ones, but they are expected to fail, and will not break your build when they do. If a test marked as failing actually passes, it
+ will be reported as an error and fail the build with a helpful message instructing you to remove the `.failing` modifier.
+
+This allows you to merge `.failing` tests before a fix is implemented without breaking CI. This is a great way to recognize good
+ bug report PR's with a commit credit, even if the reporter is unable to actually fix the problem.
+
+```js
+// See: github.com/user/repo/issues/1234
+test.<span class="apidocCodeKeywordSpan">failing</span>('demonstrate some bug', t =&gt; {
+	t.fail(); // Test will count as passed
+});
+```
+
+### Before &amp; after hooks
+
+AVA lets you register hooks that are run before and after your tests. This allows you to run setup and/or teardown code.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.runner.prototype.only" id="apidoc.element.ava.runner.prototype.only">
+        function <span class="apidocSignatureSpan">ava.runner.prototype.</span>only
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wrappedFn() {
+			var args = new Array(arguments.length);
+			for (var i = 0; i &lt; args.length; i++) {
+				args[i] = arguments[i];
+			}
+			if (spread) {
+				args.unshift(wrappedOpts());
+			} else {
+				args = [wrappedOpts(), args];
+			}
+			return fn.apply(ctx || this, args);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+During development it can be helpful to only run a few specific tests. This can be accomplished using the `.only` modifier:
+
+```js
+test('will not be run', t =&gt; {
+	t.fail();
+});
+
+test.<span class="apidocCodeKeywordSpan">only</span>('will be run', t =&gt; {
+	t.pass();
+});
+```
+
+`.only` applies across all test files, so if you use it in one file, no tests from the other file will run.
+
+### Running tests with matching titles
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.runner.prototype.serial" id="apidoc.element.ava.runner.prototype.serial">
+        function <span class="apidocSignatureSpan">ava.runner.prototype.</span>serial
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wrappedFn() {
+			var args = new Array(arguments.length);
+			for (var i = 0; i &lt; args.length; i++) {
+				args[i] = arguments[i];
+			}
+			if (spread) {
+				args.unshift(wrappedOpts());
+			} else {
+				args = [wrappedOpts(), args];
+			}
+			return fn.apply(ctx || this, args);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Running tests serially
+
+By default tests are run concurrently, which is awesome. Sometimes though you have to write tests that cannot run concurrently.
+
+In these rare cases you can use the `.serial` modifier. It will force those tests to run serially *before* the concurrent ones.
+
+```js
+test.<span class="apidocCodeKeywordSpan">serial</span>(t =&gt; {
+	t.pass();
+});
+```
+
+Note that this only applies to tests within a particular test file. AVA will still run multiple tests files at the same time unless
+ you pass the [`--serial` CLI flag](#cli).
+
+### Running specific tests
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.runner.prototype.skip" id="apidoc.element.ava.runner.prototype.skip">
+        function <span class="apidocSignatureSpan">ava.runner.prototype.</span>skip
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wrappedFn() {
+			var args = new Array(arguments.length);
+			for (var i = 0; i &lt; args.length; i++) {
+				args[i] = arguments[i];
+			}
+			if (spread) {
+				args.unshift(wrappedOpts());
+			} else {
+				args = [wrappedOpts(), args];
+			}
+			return fn.apply(ctx || this, args);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Skipping tests
+
+Sometimes failing tests can be hard to fix. You can tell AVA to skip these tests using the `.skip` modifier. They'll still
+be shown in the output (as having been skipped) but are never run.
+
+```js
+test.<span class="apidocCodeKeywordSpan">skip</span>('will not be run', t =&gt; {
+	t.fail();
+});
+```
+
+You must specify the implementation function.
+
+### Test placeholders ("todo")
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.runner.prototype.test" id="apidoc.element.ava.runner.prototype.test">
+        function <span class="apidocSignatureSpan">ava.runner.prototype.</span>test
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wrappedFn() {
+			var args = new Array(arguments.length);
+			for (var i = 0; i &lt; args.length; i++) {
+				args[i] = arguments[i];
+			}
+			if (spread) {
+				args.unshift(wrappedOpts());
+			} else {
+				args = [wrappedOpts(), args];
+			}
+			return fn.apply(ctx || this, args);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Let's take this example, using Node's standard [`assert` library](https://nodejs.org/api/assert.html):
+
+```js
+const a = /foo/;
+const b = 'bar';
+const c = 'baz';
+require('assert').ok(a.<span class="apidocCodeKeywordSpan">test</span>(b) || b === c);
+```
+
+If you paste that into a Node REPL it'll return:
+
+```
+AssertionError: false == true
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.runner.prototype.todo" id="apidoc.element.ava.runner.prototype.todo">
+        function <span class="apidocSignatureSpan">ava.runner.prototype.</span>todo
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wrappedFn() {
+			var args = new Array(arguments.length);
+			for (var i = 0; i &lt; args.length; i++) {
+				args[i] = arguments[i];
+			}
+			if (spread) {
+				args.unshift(wrappedOpts());
+			} else {
+				args = [wrappedOpts(), args];
+			}
+			return fn.apply(ctx || this, args);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+You must specify the implementation function.
+
+### Test placeholders ("todo")
+
+You can use the `.todo` modifier when you're planning to write a test. Like skipped tests these placeholders are shown in the
+ output. They only require a title; you cannot specify the implementation function.
+
+```js
+test.<span class="apidocCodeKeywordSpan">todo</span>('will think about writing this later');
+```
+
+### Failing tests
+
+You can use the `.failing` modifier to document issues with your code that need to be fixed. Failing tests are run just like normal
+ ones, but they are expected to fail, and will not break your build when they do. If a test marked as failing actually passes, it
+ will be reported as an error and fail the build with a helpful message instructing you to remove the `.failing` modifier.
+
+This allows you to merge `.failing` tests before a fix is implemented without breaking CI. This is a great way to recognize good
+ bug report PR's with a commit credit, even if the reporter is unable to actually fix the problem.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava.snapshot_state" id="apidoc.module.ava.snapshot_state">module ava.snapshot_state</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava.snapshot_state.get" id="apidoc.element.ava.snapshot_state.get">
+        function <span class="apidocSignatureSpan">ava.snapshot_state.</span>get
+        <span class="apidocSignatureSpan">(initializeState, globalsOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(initializeState, globalsOptions) =&gt; {
+	if (!x.state) {
+		// Set defaults - this allows tests to mock deps easily
+		const options = globalsOptions || globals.options;
+		const initializeSnapshotState = initializeState || jestSnapshot.initializeSnapshotState;
+
+		const filename = options.file;
+		const dirname = path.dirname(filename);
+		const snapshotFileName = path.basename(filename) + '.snap';
+		const snapshotsFolder = path.join(dirname, '__snapshots__', snapshotFileName);
+
+		x.state = initializeSnapshotState(
+			filename,
+			options.updateSnapshots,
+			snapshotsFolder,
+			true
+		);
+	}
+
+	return x.state;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+const computeStatement = (tokens, range) =&gt; {
+	return tokens
+		.filter(token =&gt; isRangeMatch(token.range, range))
+		.map(token =&gt; token.value === undefined ? token.type.label : token.value)
+		.join('');
+};
+
+const getNode = (ast, path) =&gt; dotProp.<span class="apidocCodeKeywordSpan">get</span>(ast, path.replace(/\//g, '.'
+;));
+
+const formatter = () =&gt; {
+	return context =&gt; {
+		const ast = JSON.parse(context.source.ast);
+		const tokens = JSON.parse(context.source.tokens);
+		const args = context.args[0].events;
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
