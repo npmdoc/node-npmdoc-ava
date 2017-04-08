@@ -1,0 +1,1573 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://ava.li">ava (v0.19.0)</a>
+</h1>
+<h4>Futuristic test runner ðŸš€</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava">module ava</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.ava_files">
+            function <span class="apidocSignatureSpan">ava.</span>ava_files
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.</span>_iron_node</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.</span>assert</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.</span>babel_config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.</span>colors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.</span>format_assert_error</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.</span>globals</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava._iron_node">module ava._iron_node</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava._iron_node.workSpaceDirectory">
+            function <span class="apidocSignatureSpan">ava._iron_node.</span>workSpaceDirectory
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava._iron_node.</span>app</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava.assert">module ava.assert</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.assert.AssertionError">
+            function <span class="apidocSignatureSpan">ava.assert.</span>AssertionError
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.assert.wrapAssertions">
+            function <span class="apidocSignatureSpan">ava.assert.</span>wrapAssertions
+            <span class="apidocSignatureSpan">(callbacks)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava.ava_files">module ava.ava_files</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.ava_files.ava_files">
+            function <span class="apidocSignatureSpan">ava.</span>ava_files
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.ava_files.defaultExcludePatterns">
+            function <span class="apidocSignatureSpan">ava.ava_files.</span>defaultExcludePatterns
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.ava_files.defaultIncludePatterns">
+            function <span class="apidocSignatureSpan">ava.ava_files.</span>defaultIncludePatterns
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava.babel_config">module ava.babel_config</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.babel_config.build">
+            function <span class="apidocSignatureSpan">ava.babel_config.</span>build
+            <span class="apidocSignatureSpan">(projectDir, cacheDir, userOptions, powerAssert)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.babel_config.validate">
+            function <span class="apidocSignatureSpan">ava.babel_config.</span>validate
+            <span class="apidocSignatureSpan">(conf)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava.colors">module ava.colors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.colors.duration">
+            function <span class="apidocSignatureSpan">ava.colors.</span>duration
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.colors.error">
+            function <span class="apidocSignatureSpan">ava.colors.</span>error
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.colors.errorSource">
+            function <span class="apidocSignatureSpan">ava.colors.</span>errorSource
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.colors.errorStack">
+            function <span class="apidocSignatureSpan">ava.colors.</span>errorStack
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.colors.information">
+            function <span class="apidocSignatureSpan">ava.colors.</span>information
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.colors.pass">
+            function <span class="apidocSignatureSpan">ava.colors.</span>pass
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.colors.skip">
+            function <span class="apidocSignatureSpan">ava.colors.</span>skip
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.colors.stack">
+            function <span class="apidocSignatureSpan">ava.colors.</span>stack
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.colors.title">
+            function <span class="apidocSignatureSpan">ava.colors.</span>title
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.colors.todo">
+            function <span class="apidocSignatureSpan">ava.colors.</span>todo
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava.format_assert_error">module ava.format_assert_error</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.format_assert_error.formatDiff">
+            function <span class="apidocSignatureSpan">ava.format_assert_error.</span>formatDiff
+            <span class="apidocSignatureSpan">(actual, expected)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.format_assert_error.formatSerializedError">
+            function <span class="apidocSignatureSpan">ava.format_assert_error.</span>formatSerializedError
+            <span class="apidocSignatureSpan">(error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.format_assert_error.formatValue">
+            function <span class="apidocSignatureSpan">ava.format_assert_error.</span>formatValue
+            <span class="apidocSignatureSpan">(value, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.format_assert_error.formatWithLabel">
+            function <span class="apidocSignatureSpan">ava.format_assert_error.</span>formatWithLabel
+            <span class="apidocSignatureSpan">(label, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava.globals">module ava.globals</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.globals.clearTimeout">
+            function <span class="apidocSignatureSpan">ava.globals.</span>clearTimeout
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.globals.now">
+            function <span class="apidocSignatureSpan">ava.globals.</span>now
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.globals.setImmediate">
+            function <span class="apidocSignatureSpan">ava.globals.</span>setImmediate
+            <span class="apidocSignatureSpan">(callback, arg1, arg2, arg3)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.globals.setTimeout">
+            function <span class="apidocSignatureSpan">ava.globals.</span>setTimeout
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.globals.</span>options</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava" id="apidoc.module.ava">module ava</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava.ava_files" id="apidoc.element.ava.ava_files">
+        function <span class="apidocSignatureSpan">ava.</span>ava_files
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class AvaFiles {
+	constructor(options) {
+		options = options || {};
+
+		let files = (options.files || []).map(file =&gt; {
+			// `./` should be removed from the beginning of patterns because
+			// otherwise they won't match change events from Chokidar
+			if (file.slice(0, 2) === './') {
+				return file.slice(2);
+			}
+
+			return file;
+		});
+
+		if (files.length === 0) {
+			files = defaultIncludePatterns();
+		}
+
+		this.excludePatterns = defaultExcludePatterns();
+		this.files = files;
+		this.sources = options.sources || [];
+		this.cwd = options.cwd || process.cwd();
+
+		autoBind(this);
+	}
+	findTestFiles() {
+		return handlePaths(this.files, this.excludePatterns, {
+			cwd: this.cwd,
+			cache: Object.create(null),
+			statCache: Object.create(null),
+			realpathCache: Object.create(null),
+			symlinks: Object.create(null)
+		});
+	}
+	findTestHelpers() {
+		return handlePaths(defaultHelperPatterns(), ['!**/node_modules/**'], {
+			cwd: this.cwd,
+			includeUnderscoredFiles: true,
+			cache: Object.create(null),
+			statCache: Object.create(null),
+			realpathCache: Object.create(null),
+			symlinks: Object.create(null)
+		});
+	}
+	isSource(filePath) {
+		let mixedPatterns = [];
+		const defaultIgnorePatterns = getDefaultIgnorePatterns();
+		const overrideDefaultIgnorePatterns = [];
+
+		let hasPositivePattern = false;
+		this.sources.forEach(pattern =&gt; {
+			mixedPatterns.push(pattern);
+
+			// TODO: Why not just `pattern[0] !== '!'`?
+			if (!hasPositivePattern &amp;&amp; pattern[0] !== '!') {
+				hasPositivePattern = true;
+			}
+
+			// Extract patterns that start with an ignored directory. These need to be
+			// rematched separately.
+			if (defaultIgnore.indexOf(pattern.split('/')[0]) &gt;= 0) {
+				overrideDefaultIgnorePatterns.push(pattern);
+			}
+		});
+
+		// Same defaults as used for Chokidar
+		if (!hasPositivePattern) {
+			mixedPatterns = ['package.json', '**/*.js'].concat(mixedPatterns);
+		}
+
+		filePath = matchable(filePath);
+
+		// Ignore paths outside the current working directory.
+		// They can't be matched to a pattern.
+		if (/^\.\.\//.test(filePath)) {
+			return false;
+		}
+
+		const isSource = multimatch(filePath, mixedPatterns).length === 1;
+		if (!isSource) {
+			return false;
+		}
+
+		const isIgnored = multimatch(filePath, defaultIgnorePatterns).length === 1;
+		if (!isIgnored) {
+			return true;
+		}
+
+		const isErroneouslyIgnored = multimatch(filePath, overrideDefaultIgnorePatterns).length === 1;
+		if (isErroneouslyIgnored) {
+			return true;
+		}
+
+		return false;
+	}
+	isTest(filePath) {
+		const excludePatterns = this.excludePatterns;
+		const initialPatterns = this.files.concat(excludePatterns);
+
+		// Like in `api.js`, tests must be `.js` files and not start with `_`
+		if (path.extname(filePath) !== '.js' || path.basename(filePath)[0] === '_') {
+			return false;
+		}
+
+		// Check if the entire path matches a pattern
+		if (multimatch(matchable(filePath), initialPatterns).length === 1) {
+			return true;
+		}
+
+		// Check if the path contains any directory components
+		const dirname = path.dirname(filePath);
+		if (dirname === '.') {
+			return false;
+		}
+
+		// Compute all possible subpaths. Note that the dirname is assumed to be
+		// relative to the working directory, without a leading `./`.
+		const subpaths = dirname.split(/[\\/]/).reduce((subpaths, component) =&gt; {
+			const parent = subpaths[subpaths.length - 1];
+
+			if (parent) {
+				// Always use `/`` to makes multimatch consistent across platforms
+				subpaths.push(`${parent}/${component}`);
+			} else {
+				subpaths.push(component);
+			}
+
+			return subpaths;
+		}, []);
+
+		// Check if any of the possible subpaths match a pattern. If so, generate a
+		// new pattern with **/*.js.
+		const recursivePatterns = subpaths
+			.filter(subpath =&gt; multimatch(subpath, initialPatterns).length === 1)
+			// Always use `/` to makes multimatch consistent across platforms
+			.map(subpath =&gt; `${subpath}/**/*.js`);
+
+		// See if the entire path matches any of the subpaths patterns, taking the
+		// excludePatterns into account. This mimicks the behavior in api.js
+		return multimatch(matchable(filePath), recursivePatterns.concat(excludePattern ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava._iron_node" id="apidoc.module.ava._iron_node">module ava._iron_node</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava._iron_node.workSpaceDirectory" id="apidoc.element.ava._iron_node.workSpaceDirectory">
+        function <span class="apidocSignatureSpan">ava._iron_node.</span>workSpaceDirectory
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">() =&gt; __dirname</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava.assert" id="apidoc.module.ava.assert">module ava.assert</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava.assert.AssertionError" id="apidoc.element.ava.assert.AssertionError">
+        function <span class="apidocSignatureSpan">ava.assert.</span>AssertionError
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class AssertionError extends Error {
+	constructor(opts) {
+		super(opts.message || '');
+		this.name = 'AssertionError';
+
+		this.assertion = opts.assertion;
+		this.fixedSource = opts.fixedSource;
+		this.improperUsage = opts.improperUsage || false;
+		this.operator = opts.operator;
+		this.values = opts.values || [];
+
+		// Reserved for power-assert statements
+		this.statements = [];
+
+		if (opts.stack) {
+			this.stack = opts.stack;
+		}
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.assert.wrapAssertions" id="apidoc.element.ava.assert.wrapAssertions">
+        function <span class="apidocSignatureSpan">ava.assert.</span>wrapAssertions
+        <span class="apidocSignatureSpan">(callbacks)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wrapAssertions(callbacks) {
+	const pass = callbacks.pass;
+	const pending = callbacks.pending;
+	const fail = callbacks.fail;
+
+	const noop = () =&gt; {};
+	const makeNoop = () =&gt; noop;
+	const makeRethrow = reason =&gt; () =&gt; {
+		throw reason;
+	};
+
+	const assertions = {
+		pass() {
+			pass(this);
+		},
+
+		fail(message) {
+			fail(this, new AssertionError({
+				assertion: 'fail',
+				message: message || 'Test failed via `t.fail()`'
+			}));
+		},
+
+		is(actual, expected, message) {
+			if (actual === expected) {
+				pass(this);
+			} else {
+				const diff = formatAssertError.formatDiff(actual, expected);
+				const values = diff ? [diff] : [
+					formatAssertError.formatWithLabel('Actual:', actual),
+					formatAssertError.formatWithLabel('Must be strictly equal to:', expected)
+				];
+
+				fail(this, new AssertionError({
+					assertion: 'is',
+					message,
+					operator: '===',
+					values
+				}));
+			}
+		},
+
+		not(actual, expected, message) {
+			if (actual === expected) {
+				fail(this, new AssertionError({
+					assertion: 'not',
+					message,
+					operator: '!==',
+					values: [formatAssertError.formatWithLabel('Value is strictly equal:', actual)]
+				}));
+			} else {
+				pass(this);
+			}
+		},
+
+		deepEqual(actual, expected, message) {
+			if (deepEqual(actual, expected)) {
+				pass(this);
+			} else {
+				const diff = formatAssertError.formatDiff(actual, expected);
+				const values = diff ? [diff] : [
+					formatAssertError.formatWithLabel('Actual:', actual),
+					formatAssertError.formatWithLabel('Must be deeply equal to:', expected)
+				];
+
+				fail(this, new AssertionError({
+					assertion: 'deepEqual',
+					message,
+					values
+				}));
+			}
+		},
+
+		notDeepEqual(actual, expected, message) {
+			if (deepEqual(actual, expected)) {
+				fail(this, new AssertionError({
+					assertion: 'notDeepEqual',
+					message,
+					values: [formatAssertError.formatWithLabel('Value is deeply equal:', actual)]
+				}));
+			} else {
+				pass(this);
+			}
+		},
+
+		throws(fn, err, message) {
+			let promise;
+			if (isPromise(fn)) {
+				promise = fn;
+			} else if (isObservable(fn)) {
+				promise = observableToPromise(fn);
+			} else if (typeof fn !== 'function') {
+				fail(this, new AssertionError({
+					assertion: 'throws',
+					improperUsage: true,
+					message: '`t.throws()` must be called with a function, Promise, or Observable',
+					values: [formatAssertError.formatWithLabel('Called with:', fn)]
+				}));
+				return;
+			}
+
+			let coreAssertThrowsErrorArg;
+			if (typeof err === 'string') {
+				const expectedMessage = err;
+				coreAssertThrowsErrorArg = error =&gt; error.message === expectedMessage;
+			} else {
+				// Assume it's a constructor function or regular expression
+				coreAssertThrowsErrorArg = err;
+			}
+
+			const test = (fn, stack) =&gt; {
+				let actual;
+				let threw = false;
+				try {
+					coreAssert.throws(() =&gt; {
+						try {
+							fn();
+						} catch (err) {
+							actual = err;
+							threw = true;
+							throw err;
+						}
+					}, coreAssertThrowsErrorArg);
+					return actual;
+				} catch (err) {
+					const values = threw ?
+						[formatAssertError.formatWithLabel('Threw unexpected exception:', actual)] :
+						null;
+
+					throw new AssertionError({
+						assertion: 'throws',
+						message,
+						stack,
+						values
+					});
+				}
+			};
+
+			if (promise) {
+				// Record stack before it gets lost in the promise chain.
+				const stack = getStack();
+				const intermediate = promise.then(makeNoop, makeRethrow).then(fn =&gt; test(fn, stack));
+				pending(this, intermediate);
+				// Don't reject the returned promise, even if the assertion fails.
+				return intermediate.catch(noop);
+			}
+
+			try {
+				const retval = test(fn);
+				pass(this);
+				return retval;
+			} catch (err) {
+				fail(this, err);
+			}
+		},
+
+		notThrows(fn, message) {
+			let promise;
+			if (isPromise(fn)) {
+				promise = fn;
+			} else if (isObservable(fn)) {
+				promise = observableToPromise(fn);
+			} else if (typeof fn !== 'function') {
+				fail(this, new AssertionError({
+					assertion: 'notThrows',
+					improperUsage: true,
+					message: '`t.notThrows()` must be called with a funct ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava.ava_files" id="apidoc.module.ava.ava_files">module ava.ava_files</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava.ava_files.ava_files" id="apidoc.element.ava.ava_files.ava_files">
+        function <span class="apidocSignatureSpan">ava.</span>ava_files
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class AvaFiles {
+	constructor(options) {
+		options = options || {};
+
+		let files = (options.files || []).map(file =&gt; {
+			// `./` should be removed from the beginning of patterns because
+			// otherwise they won't match change events from Chokidar
+			if (file.slice(0, 2) === './') {
+				return file.slice(2);
+			}
+
+			return file;
+		});
+
+		if (files.length === 0) {
+			files = defaultIncludePatterns();
+		}
+
+		this.excludePatterns = defaultExcludePatterns();
+		this.files = files;
+		this.sources = options.sources || [];
+		this.cwd = options.cwd || process.cwd();
+
+		autoBind(this);
+	}
+	findTestFiles() {
+		return handlePaths(this.files, this.excludePatterns, {
+			cwd: this.cwd,
+			cache: Object.create(null),
+			statCache: Object.create(null),
+			realpathCache: Object.create(null),
+			symlinks: Object.create(null)
+		});
+	}
+	findTestHelpers() {
+		return handlePaths(defaultHelperPatterns(), ['!**/node_modules/**'], {
+			cwd: this.cwd,
+			includeUnderscoredFiles: true,
+			cache: Object.create(null),
+			statCache: Object.create(null),
+			realpathCache: Object.create(null),
+			symlinks: Object.create(null)
+		});
+	}
+	isSource(filePath) {
+		let mixedPatterns = [];
+		const defaultIgnorePatterns = getDefaultIgnorePatterns();
+		const overrideDefaultIgnorePatterns = [];
+
+		let hasPositivePattern = false;
+		this.sources.forEach(pattern =&gt; {
+			mixedPatterns.push(pattern);
+
+			// TODO: Why not just `pattern[0] !== '!'`?
+			if (!hasPositivePattern &amp;&amp; pattern[0] !== '!') {
+				hasPositivePattern = true;
+			}
+
+			// Extract patterns that start with an ignored directory. These need to be
+			// rematched separately.
+			if (defaultIgnore.indexOf(pattern.split('/')[0]) &gt;= 0) {
+				overrideDefaultIgnorePatterns.push(pattern);
+			}
+		});
+
+		// Same defaults as used for Chokidar
+		if (!hasPositivePattern) {
+			mixedPatterns = ['package.json', '**/*.js'].concat(mixedPatterns);
+		}
+
+		filePath = matchable(filePath);
+
+		// Ignore paths outside the current working directory.
+		// They can't be matched to a pattern.
+		if (/^\.\.\//.test(filePath)) {
+			return false;
+		}
+
+		const isSource = multimatch(filePath, mixedPatterns).length === 1;
+		if (!isSource) {
+			return false;
+		}
+
+		const isIgnored = multimatch(filePath, defaultIgnorePatterns).length === 1;
+		if (!isIgnored) {
+			return true;
+		}
+
+		const isErroneouslyIgnored = multimatch(filePath, overrideDefaultIgnorePatterns).length === 1;
+		if (isErroneouslyIgnored) {
+			return true;
+		}
+
+		return false;
+	}
+	isTest(filePath) {
+		const excludePatterns = this.excludePatterns;
+		const initialPatterns = this.files.concat(excludePatterns);
+
+		// Like in `api.js`, tests must be `.js` files and not start with `_`
+		if (path.extname(filePath) !== '.js' || path.basename(filePath)[0] === '_') {
+			return false;
+		}
+
+		// Check if the entire path matches a pattern
+		if (multimatch(matchable(filePath), initialPatterns).length === 1) {
+			return true;
+		}
+
+		// Check if the path contains any directory components
+		const dirname = path.dirname(filePath);
+		if (dirname === '.') {
+			return false;
+		}
+
+		// Compute all possible subpaths. Note that the dirname is assumed to be
+		// relative to the working directory, without a leading `./`.
+		const subpaths = dirname.split(/[\\/]/).reduce((subpaths, component) =&gt; {
+			const parent = subpaths[subpaths.length - 1];
+
+			if (parent) {
+				// Always use `/`` to makes multimatch consistent across platforms
+				subpaths.push(`${parent}/${component}`);
+			} else {
+				subpaths.push(component);
+			}
+
+			return subpaths;
+		}, []);
+
+		// Check if any of the possible subpaths match a pattern. If so, generate a
+		// new pattern with **/*.js.
+		const recursivePatterns = subpaths
+			.filter(subpath =&gt; multimatch(subpath, initialPatterns).length === 1)
+			// Always use `/` to makes multimatch consistent across platforms
+			.map(subpath =&gt; `${subpath}/**/*.js`);
+
+		// See if the entire path matches any of the subpaths patterns, taking the
+		// excludePatterns into account. This mimicks the behavior in api.js
+		return multimatch(matchable(filePath), recursivePatterns.concat(excludePattern ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.ava_files.defaultExcludePatterns" id="apidoc.element.ava.ava_files.defaultExcludePatterns">
+        function <span class="apidocSignatureSpan">ava.ava_files.</span>defaultExcludePatterns
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">() =&gt; [
+	'!**/node_modules/**',
+	'!**/fixtures/**',
+	'!**/helpers/**'
+]</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.ava_files.defaultIncludePatterns" id="apidoc.element.ava.ava_files.defaultIncludePatterns">
+        function <span class="apidocSignatureSpan">ava.ava_files.</span>defaultIncludePatterns
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">() =&gt; [
+	'test.js',
+	'test-*.js',
+	'test',
+	'**/__tests__',
+	'**/*.test.js'
+]</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava.babel_config" id="apidoc.module.ava.babel_config">module ava.babel_config</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava.babel_config.build" id="apidoc.element.ava.babel_config.build">
+        function <span class="apidocSignatureSpan">ava.babel_config.</span>build
+        <span class="apidocSignatureSpan">(projectDir, cacheDir, userOptions, powerAssert)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function build(projectDir, cacheDir, userOptions, powerAssert) {
+	// Compute a seed based on the Node.js version and the project directory.
+	// Dependency hashes may vary based on the Node.js version, e.g. with the
+	// @ava/stage-4 Babel preset. Sources and dependencies paths are absolute in
+	// the generated module and verifier state. Those paths wouldn't necessarily
+	// be valid if the project directory changes.
+	const seed = md5Hex([process.versions.node, projectDir]);
+
+	// Ensure cacheDir exists
+	mkdirp.sync(cacheDir);
+
+	// The file names predict where valid options may be cached, and thus should
+	// include the seed.
+	const optionsFile = path.join(cacheDir, `${seed}.babel-options.js`);
+	const verifierFile = path.join(cacheDir, `${seed}.verifier.bin`);
+
+	const baseOptions = {
+		babelrc: false,
+		presets: [
+			['@ava/transform-test-files', {powerAssert}]
+		]
+	};
+	if (userOptions === 'default') {
+		baseOptions.presets.unshift('@ava/stage-4');
+	}
+
+	const baseConfig = configManager.createConfig({
+		dir: AVA_DIR, // Presets are resolved relative to this directory
+		hash: md5Hex(JSON.stringify(baseOptions)),
+		json5: false,
+		options: baseOptions,
+		source: SOURCE
+	});
+
+	if (userOptions !== 'default') {
+		baseConfig.extend(configManager.createConfig({
+			dir: projectDir,
+			options: userOptions === 'inherit' ?
+				{babelrc: true} :
+				userOptions,
+			source: path.join(projectDir, 'package.json') + '#ava.babel',
+			hash: md5Hex(JSON.stringify(userOptions))
+		}));
+	}
+
+	const cache = configManager.prepareCache();
+	return verifyExistingOptions(verifierFile, baseConfig, cache)
+		.then(cacheKeys =&gt; {
+			if (cacheKeys) {
+				return cacheKeys;
+			}
+
+			return resolveOptions(baseConfig, cache, optionsFile, verifierFile);
+		})
+		.then(cacheKeys =&gt; ({
+			getOptions: require(optionsFile).getOptions, // eslint-disable-line import/no-dynamic-require
+			// Include the seed in the cache keys used to store compilation results.
+			cacheKeys: Object.assign({seed}, cacheKeys)
+		}));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+				cacheDir = foundDir;
+			}
+		}
+
+		this.options.cacheDir = cacheDir;
+
+		const isPowerAssertEnabled = this.options.powerAssert !== false;
+		return babelConfigHelper.<span class="apidocCodeKeywordSpan">build</span>(this.options.projectDir, cacheDir, this.options.babelConfig
+, isPowerAssertEnabled)
+			.then(result =&gt; {
+				this.precompiler = new CachingPrecompiler({
+					path: cacheDir,
+					getBabelOptions: result.getOptions,
+					babelCacheKeys: result.cacheKeys
+				});
+			});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.babel_config.validate" id="apidoc.element.ava.babel_config.validate">
+        function <span class="apidocSignatureSpan">ava.babel_config.</span>validate
+        <span class="apidocSignatureSpan">(conf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function validate(conf) {
+	if (conf === undefined || conf === null) {
+		conf = 'default';
+	}
+
+	// Check for valid babel config shortcuts (can be either `default` or `inherit`)
+	const isValidShortcut = conf === 'default' || conf === 'inherit';
+
+	if (!conf || (typeof conf === 'string' &amp;&amp; !isValidShortcut)) {
+		let message = colors.error(figures.cross);
+		message += ' Unexpected Babel configuration for AVA. ';
+		message += 'See ' + chalk.underline('https://github.com/avajs/ava#es2015-support') + ' for allowed values.';
+
+		throw new Error(message);
+	}
+
+	return conf;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava.colors" id="apidoc.module.ava.colors">module ava.colors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava.colors.duration" id="apidoc.element.ava.colors.duration">
+        function <span class="apidocSignatureSpan">ava.colors.</span>duration
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">duration = function () {
+		return applyStyle.apply(builder, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.colors.error" id="apidoc.element.ava.colors.error">
+        function <span class="apidocSignatureSpan">ava.colors.</span>error
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function () {
+		return applyStyle.apply(builder, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		conf = 'default';
+	}
+
+	// Check for valid babel config shortcuts (can be either `default` or `inherit`)
+	const isValidShortcut = conf === 'default' || conf === 'inherit';
+
+	if (!conf || (typeof conf === 'string' &amp;&amp; !isValidShortcut)) {
+		let message = colors.<span class="apidocCodeKeywordSpan">error</span>(figures.cross);
+		message += ' Unexpected Babel configuration for AVA. ';
+		message += 'See ' + chalk.underline('https://github.com/avajs/ava#es2015-support') + ' for allowed values
+.';
+
+		throw new Error(message);
+	}
+
+	return conf;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.colors.errorSource" id="apidoc.element.ava.colors.errorSource">
+        function <span class="apidocSignatureSpan">ava.colors.</span>errorSource
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">errorSource = function () {
+		return applyStyle.apply(builder, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.colors.errorStack" id="apidoc.element.ava.colors.errorStack">
+        function <span class="apidocSignatureSpan">ava.colors.</span>errorStack
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">errorStack = function () {
+		return applyStyle.apply(builder, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.colors.information" id="apidoc.element.ava.colors.information">
+        function <span class="apidocSignatureSpan">ava.colors.</span>information
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">information = function () {
+		return applyStyle.apply(builder, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.colors.pass" id="apidoc.element.ava.colors.pass">
+        function <span class="apidocSignatureSpan">ava.colors.</span>pass
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pass = function () {
+		return applyStyle.apply(builder, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Create a file named `test.js` in the project root directory:
+
+```js
+import test from 'ava';
+
+test('foo', t =&gt; {
+	t.<span class="apidocCodeKeywordSpan">pass</span>();
+});
+
+test('bar', async t =&gt; {
+	const bar = Promise.resolve('bar');
+
+	t.is(await bar, 'bar');
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.colors.skip" id="apidoc.element.ava.colors.skip">
+        function <span class="apidocSignatureSpan">ava.colors.</span>skip
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">skip = function () {
+		return applyStyle.apply(builder, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Skipping tests
+
+Sometimes failing tests can be hard to fix. You can tell AVA to skip these tests using the `.skip` modifier. They'll still
+be shown in the output (as having been skipped) but are never run.
+
+```js
+test.<span class="apidocCodeKeywordSpan">skip</span>('will not be run', t =&gt; {
+	t.fail();
+});
+```
+
+You must specify the implementation function.
+
+### Test placeholders ("todo")
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.colors.stack" id="apidoc.element.ava.colors.stack">
+        function <span class="apidocSignatureSpan">ava.colors.</span>stack
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stack = function () {
+		return applyStyle.apply(builder, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.colors.title" id="apidoc.element.ava.colors.title">
+        function <span class="apidocSignatureSpan">ava.colors.</span>title
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">title = function () {
+		return applyStyle.apply(builder, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.colors.todo" id="apidoc.element.ava.colors.todo">
+        function <span class="apidocSignatureSpan">ava.colors.</span>todo
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">todo = function () {
+		return applyStyle.apply(builder, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+You must specify the implementation function.
+
+### Test placeholders ("todo")
+
+You can use the `.todo` modifier when you're planning to write a test. Like skipped tests these placeholders are shown in the
+ output. They only require a title; you cannot specify the implementation function.
+
+```js
+test.<span class="apidocCodeKeywordSpan">todo</span>('will think about writing this later');
+```
+
+### Failing tests
+
+You can use the `.failing` modifier to document issues with your code that need to be fixed. Failing tests are run just like normal
+ ones, but they are expected to fail, and will not break your build when they do. If a test marked as failing actually passes, it
+ will be reported as an error and fail the build with a helpful message instructing you to remove the `.failing` modifier.
+
+This allows you to merge `.failing` tests before a fix is implemented without breaking CI. This is a great way to recognize good
+ bug report PR's with a commit credit, even if the reporter is unable to actually fix the problem.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava.format_assert_error" id="apidoc.module.ava.format_assert_error">module ava.format_assert_error</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava.format_assert_error.formatDiff" id="apidoc.element.ava.format_assert_error.formatDiff">
+        function <span class="apidocSignatureSpan">ava.format_assert_error.</span>formatDiff
+        <span class="apidocSignatureSpan">(actual, expected)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function formatDiff(actual, expected) {
+	const actualType = getType(actual);
+	const expectedType = getType(expected);
+	if (actualType !== expectedType) {
+		return null;
+	}
+
+	if (actualType === 'array' || actualType === 'object') {
+		const formatted = diff.createPatch('string', formatValue(actual), formatValue(expected))
+			.split('\n')
+			.slice(4)
+			.map(cleanUp)
+			.filter(Boolean)
+			.join('\n')
+			.trimRight();
+
+		return {label: 'Difference:', formatted};
+	}
+
+	if (actualType === 'string') {
+		const formatted = new DiffMatchPatch()
+			.diff_main(formatValue(actual, {highlight: false}), formatValue(expected, {highlight: false}))
+			.map(part =&gt; {
+				if (part[0] === 1) {
+					return chalk.bgGreen.black(part[1]);
+				}
+
+				if (part[0] === -1) {
+					return chalk.bgRed.black(part[1]);
+				}
+
+				return chalk.red(part[1]);
+			})
+			.join('')
+			.trimRight();
+
+		return {label: 'Difference:', formatted};
+	}
+
+	return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			}));
+		},
+
+		is(actual, expected, message) {
+			if (actual === expected) {
+				pass(this);
+			} else {
+				const diff = formatAssertError.<span class="apidocCodeKeywordSpan">formatDiff</span>(actual, expected);
+				const values = diff ? [diff] : [
+					formatAssertError.formatWithLabel('Actual:', actual),
+					formatAssertError.formatWithLabel('Must be strictly equal to:', expected)
+				];
+
+				fail(this, new AssertionError({
+					assertion: 'is',
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.format_assert_error.formatSerializedError" id="apidoc.element.ava.format_assert_error.formatSerializedError">
+        function <span class="apidocSignatureSpan">ava.format_assert_error.</span>formatSerializedError
+        <span class="apidocSignatureSpan">(error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function formatSerializedError(error) {
+	if (error.statements.length === 0 &amp;&amp; error.values.length === 0) {
+		return null;
+	}
+
+	let result = error.values
+		.map(value =&gt; `${value.label}\n\n${indentString(value.formatted, 2).trimRight()}\n`)
+		.join('\n');
+
+	if (error.statements.length &gt; 0) {
+		if (error.values.length &gt; 0) {
+			result += '\n';
+		}
+
+		result += error.statements
+			.map(statement =&gt; `${statement[0]}\n${chalk.grey('=&gt;')} ${statement[1]}\n`)
+			.join('\n');
+	}
+
+	return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.format_assert_error.formatValue" id="apidoc.element.ava.format_assert_error.formatValue">
+        function <span class="apidocSignatureSpan">ava.format_assert_error.</span>formatValue
+        <span class="apidocSignatureSpan">(value, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function formatValue(value, options) {
+	return prettyFormat(value, Object.assign({
+		callToJSON: false,
+		plugins: [reactTestPlugin],
+		highlight: globals.options.color !== false
+	}, options));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.format_assert_error.formatWithLabel" id="apidoc.element.ava.format_assert_error.formatWithLabel">
+        function <span class="apidocSignatureSpan">ava.format_assert_error.</span>formatWithLabel
+        <span class="apidocSignatureSpan">(label, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function formatWithLabel(label, value) {
+	return {label, formatted: formatValue(value)};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+		is(actual, expected, message) {
+			if (actual === expected) {
+				pass(this);
+			} else {
+				const diff = formatAssertError.formatDiff(actual, expected);
+				const values = diff ? [diff] : [
+					formatAssertError.<span class="apidocCodeKeywordSpan">formatWithLabel</span>('Actual:', actual),
+					formatAssertError.formatWithLabel('Must be strictly equal to:', expected)
+				];
+
+				fail(this, new AssertionError({
+					assertion: 'is',
+					message,
+					operator: '===',
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava.globals" id="apidoc.module.ava.globals">module ava.globals</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava.globals.clearTimeout" id="apidoc.element.ava.globals.clearTimeout">
+        function <span class="apidocSignatureSpan">ava.globals.</span>clearTimeout
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clearTimeout = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.globals.now" id="apidoc.element.ava.globals.now">
+        function <span class="apidocSignatureSpan">ava.globals.</span>now
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function now() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.globals.setImmediate" id="apidoc.element.ava.globals.setImmediate">
+        function <span class="apidocSignatureSpan">ava.globals.</span>setImmediate
+        <span class="apidocSignatureSpan">(callback, arg1, arg2, arg3)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setImmediate = function (callback, arg1, arg2, arg3) {
+  if (typeof callback !== 'function') {
+    throw new TypeError('"callback" argument must be a function');
+  }
+
+  var i, args;
+
+  switch (arguments.length) {
+    // fast cases
+    case 1:
+      break;
+    case 2:
+      args = [arg1];
+      break;
+    case 3:
+      args = [arg1, arg2];
+      break;
+    default:
+      args = [arg1, arg2, arg3];
+      for (i = 4; i &lt; arguments.length; i++)
+        // extend array dynamically, makes .apply run much faster in v6.0.0
+        args[i - 1] = arguments[i];
+      break;
+  }
+  return createImmediate(args, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ava.globals.setTimeout" id="apidoc.element.ava.globals.setTimeout">
+        function <span class="apidocSignatureSpan">ava.globals.</span>setTimeout
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setTimeout = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
