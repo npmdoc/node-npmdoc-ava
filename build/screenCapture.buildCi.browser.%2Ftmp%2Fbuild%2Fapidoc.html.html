@@ -47,7 +47,7 @@
 }
 </style>
 <h1>api documentation for
-    <a href="https://ava.li">ava (v0.19.0)</a>
+    <a href="https://ava.li">ava (v0.19.1)</a>
 </h1>
 <h4>Futuristic test runner ðŸš€</h4>
 <div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
@@ -96,6 +96,12 @@
         <li>
 
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.</span>globals</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.</span>improper_usage_messages</span>
 
         </li>
 
@@ -353,7 +359,7 @@
 
             <a class="apidocElementLiA" href="#apidoc.element.ava.globals.setImmediate">
             function <span class="apidocSignatureSpan">ava.globals.</span>setImmediate
-            <span class="apidocSignatureSpan">(callback, arg1, arg2, arg3)</span>
+            <span class="apidocSignatureSpan">()</span>
             </a>
 
         </li>
@@ -370,6 +376,19 @@
         <li>
 
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.globals.</span>options</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava.improper_usage_messages">module ava.improper_usage_messages</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.improper_usage_messages.forError">
+            function <span class="apidocSignatureSpan">ava.improper_usage_messages.</span>forError
+            <span class="apidocSignatureSpan">(!error.improperUsage)</span>
+            </a>
 
         </li>
 
@@ -530,6 +549,8 @@
 		return multimatch(matchable(filePath), recursivePatterns.concat(excludePattern ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
+
+
 
 
 
@@ -1112,7 +1133,24 @@
     <li>description and source-code<pre class="apidocCodePre">duration = function () {
 		return applyStyle.apply(builder, arguments);
 	}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+		if (runStatus.fileCount === 1 &amp;&amp; runStatus.testCount === 1 &amp;&amp; test.title === '[anonymous]') {
+			return undefined;
+		}
+
+		// Display duration only over a threshold
+		const threshold = 100;
+		const duration = test.duration &gt; threshold ? colors.<span class="apidocCodeKeywordSpan">duration</span>(' (' +
+prettyMs(test.duration) + ')') : '';
+
+		return '  ' + colors.pass(figures.tick) + ' ' + test.title + duration;
+	}
+	unhandledError(err) {
+		if (err.type === 'exception' &amp;&amp; err.name === 'AvaError') {
+			return colors.error('  ' + figures.cross + ' ' + err.message);
+		}
+...</pre></li>
     </ul>
 
 
@@ -1128,22 +1166,17 @@
 		return applyStyle.apply(builder, arguments);
 	}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-		conf = 'default';
+	if (debug.enabled) {
+		require('time-require'); // eslint-disable-line import/no-unassigned-import
 	}
 
-	// Check for valid babel config shortcuts (can be either `default` or `inherit`)
-	const isValidShortcut = conf === 'default' || conf === 'inherit';
-
-	if (!conf || (typeof conf === 'string' &amp;&amp; !isValidShortcut)) {
-		let message = colors.<span class="apidocCodeKeywordSpan">error</span>(figures.cross);
-		message += ' Unexpected Babel configuration for AVA. ';
-		message += 'See ' + chalk.underline('https://github.com/avajs/ava#es2015-support') + ' for allowed values
-.';
-
-		throw new Error(message);
+	try {
+		require('./lib/cli').run();
+	} catch (err) {
+		console.<span class="apidocCodeKeywordSpan">error</span>(`\n  ${err.message}`);
+		process.exit(1);
 	}
-
-	return conf;
+}
 ...</pre></li>
     </ul>
 
@@ -1159,7 +1192,23 @@
     <li>description and source-code<pre class="apidocCodePre">errorSource = function () {
 		return applyStyle.apply(builder, arguments);
 	}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+					return;
+				}
+
+				const beforeSpacing = index === 0 ? '\n\n' : '\n\n\n\n';
+
+				status += beforeSpacing + '  ' + colors.title(test.title) + '\n';
+				if (test.error.source) {
+					status += '  ' + colors.<span class="apidocCodeKeywordSpan">errorSource</span>(test.error.source.file + ':&amp;#
+x27; + test.error.source.line) + '\n';
+
+					const excerpt = codeExcerpt(test.error.source, {maxWidth: process.stdout.columns});
+					if (excerpt) {
+						status += '\n' + indentString(excerpt, 2) + '\n';
+					}
+				}
+...</pre></li>
     </ul>
 
 
@@ -1174,7 +1223,23 @@
     <li>description and source-code<pre class="apidocCodePre">errorStack = function () {
 		return applyStyle.apply(builder, arguments);
 	}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+						status += '\n' + indentString(message, 2) + '\n';
+					}
+				}
+
+				if (test.error.stack) {
+					const extracted = extractStack(test.error.stack);
+					if (extracted.includes('\n')) {
+						status += '\n' + indentString(colors.<span class="apidocCodeKeywordSpan">errorStack</span>(extracted), 2);
+					}
+				}
+			});
+		}
+
+		if (this.rejectionCount &gt; 0 || this.exceptionCount &gt; 0) {
+			// TODO(sindresorhus): Figure out why this causes a test failure when switched to a for-of loop
+...</pre></li>
     </ul>
 
 
@@ -1189,7 +1254,28 @@
     <li>description and source-code<pre class="apidocCodePre">information = function () {
 		return applyStyle.apply(builder, arguments);
 	}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+					status += colors.errorStack(errorStack);
+				}
+			});
+		}
+
+		if (runStatus.failFastEnabled === true &amp;&amp; runStatus.remainingCount &gt; 0 &amp;&amp; runStatus.failCount &gt;
+0) {
+			const remaining = 'At least ' + runStatus.remainingCount + ' ' + plur('test was', 'tests were
+', runStatus.remainingCount) + ' skipped.';
+			status += '\n\n  ' + colors.<span class="apidocCodeKeywordSpan">information</span>('`--fail-fast` is on. '
+; + remaining);
+		}
+
+		if (runStatus.hasExclusive === true &amp;&amp; runStatus.remainingCount &gt; 0) {
+			status += '\n\n  ' + colors.information('The .only() modifier is used in some tests.', runStatus.remainingCount
+, plur('test', runStatus.remainingCount), plur('was', 'were', runStatus.remainingCount), 'not
+ run');
+		}
+
+		return status + '\n\n';
+...</pre></li>
     </ul>
 
 
@@ -1267,7 +1353,23 @@ You must specify the implementation function.
     <li>description and source-code<pre class="apidocCodePre">stack = function () {
 		return applyStyle.apply(builder, arguments);
 	}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		}
+
+		if (this.knownFailureCount &gt; 0) {
+			for (const test of runStatus.knownFailures) {
+				const title = test.title;
+				status += '\n\n   ' + colors.title(title);
+				// TODO: Output description with link
+				// status += colors.<span class="apidocCodeKeywordSpan">stack</span>(description);
+			}
+		}
+
+		if (this.failCount &gt; 0) {
+			runStatus.errors.forEach((test, index) =&gt; {
+				if (!test.error) {
+					return;
+...</pre></li>
     </ul>
 
 
@@ -1282,7 +1384,24 @@ You must specify the implementation function.
     <li>description and source-code<pre class="apidocCodePre">title = function () {
 		return applyStyle.apply(builder, arguments);
 	}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		if (runStatus.previousFailCount &gt; 0) {
+			status += '\n  ' + colors.error(runStatus.previousFailCount, 'previous', plur('failure', runStatus
+.previousFailCount), 'in test files that were not rerun');
+		}
+
+		if (this.knownFailureCount &gt; 0) {
+			for (const test of runStatus.knownFailures) {
+				const title = test.title;
+				status += '\n\n   ' + colors.<span class="apidocCodeKeywordSpan">title</span>(title);
+				// TODO: Output description with link
+				// status += colors.stack(description);
+			}
+		}
+
+		if (this.failCount &gt; 0) {
+			runStatus.errors.forEach((test, index) =&gt; {
+...</pre></li>
     </ul>
 
 
@@ -1424,7 +1543,23 @@ This allows you to merge `.failing` tests before a fix is implemented without br
 
 	return result;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+				}
+
+				if (test.error.message) {
+					status += '\n' + indentString(test.error.message, 2) + '\n';
+				}
+
+				if (test.error.avaAssertionError) {
+					const formatted = formatAssertError.<span class="apidocCodeKeywordSpan">formatSerializedError</span>(test.error);
+					if (formatted) {
+						status += '\n' + indentString(formatted, 2);
+					}
+
+					const message = improperUsageMessages.forError(test.error);
+					if (message) {
+						status += '\n' + indentString(message, 2) + '\n';
+...</pre></li>
     </ul>
 
 
@@ -1513,35 +1648,15 @@ This allows you to merge `.failing` tests before a fix is implemented without br
     <h2>
         <a href="#apidoc.element.ava.globals.setImmediate" id="apidoc.element.ava.globals.setImmediate">
         function <span class="apidocSignatureSpan">ava.globals.</span>setImmediate
-        <span class="apidocSignatureSpan">(callback, arg1, arg2, arg3)</span>
+        <span class="apidocSignatureSpan">()</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">setImmediate = function (callback, arg1, arg2, arg3) {
-  if (typeof callback !== 'function') {
-    throw new TypeError('"callback" argument must be a function');
-  }
-
-  var i, args;
-
-  switch (arguments.length) {
-    // fast cases
-    case 1:
-      break;
-    case 2:
-      args = [arg1];
-      break;
-    case 3:
-      args = [arg1, arg2];
-      break;
-    default:
-      args = [arg1, arg2, arg3];
-      for (i = 4; i &lt; arguments.length; i++)
-        // extend array dynamically, makes .apply run much faster in v6.0.0
-        args[i - 1] = arguments[i];
-      break;
-  }
-  return createImmediate(args, callback);
+    <li>description and source-code<pre class="apidocCodePre">setImmediate = function () {
+<span class="apidocCodeCommentSpan">/*
+ * this function will do nothing
+ */
+</span>    return;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1560,6 +1675,57 @@ This allows you to merge `.failing` tests before a fix is implemented without br
     </ul>
 
 
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava.improper_usage_messages" id="apidoc.module.ava.improper_usage_messages">module ava.improper_usage_messages</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava.improper_usage_messages.forError" id="apidoc.element.ava.improper_usage_messages.forError">
+        function <span class="apidocSignatureSpan">ava.improper_usage_messages.</span>forError
+        <span class="apidocSignatureSpan">(!error.improperUsage)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error =&gt; {
+	if (!error.improperUsage) {
+		return null;
+	}
+
+	const assertion = error.assertion;
+	if (assertion !== 'throws' || !assertion === 'notThrows') {
+		return null;
+	}
+
+	return `Try wrapping the first argument to \`t.${assertion}()\` in a function:
+
+  ${chalk.cyan(`t.${assertion}(() =&gt; { `)}${chalk.grey('/* your code here */')}${chalk.cyan(' })')}
+
+Visit the following URL for more details:
+
+  ${chalk.blue.underline('https://github.com/avajs/ava#throwsfunctionpromise-error-message')}`;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+				if (test.error.avaAssertionError) {
+					const formatted = formatAssertError.formatSerializedError(test.error);
+					if (formatted) {
+						status += '\n' + indentString(formatted, 2);
+					}
+
+					const message = improperUsageMessages.<span class="apidocCodeKeywordSpan">forError</span>(test.error);
+					if (message) {
+						status += '\n' + indentString(message, 2) + '\n';
+					}
+				}
+
+				if (test.error.stack) {
+					const extracted = extractStack(test.error.stack);
+...</pre></li>
+    </ul>
 
 
 </div>

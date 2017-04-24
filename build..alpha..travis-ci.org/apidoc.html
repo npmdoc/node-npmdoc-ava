@@ -51,7 +51,7 @@
 
         href="https://ava.li"
 
-    >ava (v0.19.0)</a>
+    >ava (v0.19.1)</a>
 </h1>
 <h4>Futuristic test runner 🚀</h4>
 <div class="apidocSectionDiv"><a
@@ -103,6 +103,12 @@
         <li>
 
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.</span>globals</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.</span>improper_usage_messages</span>
 
         </li>
 
@@ -360,7 +366,7 @@
 
             <a class="apidocElementLiA" href="#apidoc.element.ava.globals.setImmediate">
             function <span class="apidocSignatureSpan">ava.globals.</span>setImmediate
-            <span class="apidocSignatureSpan">(callback, arg1, arg2, arg3)</span>
+            <span class="apidocSignatureSpan">()</span>
             </a>
 
         </li>
@@ -377,6 +383,19 @@
         <li>
 
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ava.globals.</span>options</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ava.improper_usage_messages">module ava.improper_usage_messages</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ava.improper_usage_messages.forError">
+            function <span class="apidocSignatureSpan">ava.improper_usage_messages.</span>forError
+            <span class="apidocSignatureSpan">(!error.improperUsage)</span>
+            </a>
 
         </li>
 
@@ -537,6 +556,8 @@
 		return multimatch(matchable(filePath), recursivePatterns.concat(excludePattern ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
+
+
 
 
 
@@ -1119,7 +1140,24 @@
     <li>description and source-code<pre class="apidocCodePre">duration = function () {
 		return applyStyle.apply(builder, arguments);
 	}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+		if (runStatus.fileCount === 1 &#x26;&#x26; runStatus.testCount === 1 &#x26;&#x26; test.title === &#x27;[anonymous]&#x27;) {
+			return undefined;
+		}
+
+		// Display duration only over a threshold
+		const threshold = 100;
+		const duration = test.duration &#x3e; threshold ? colors.<span class="apidocCodeKeywordSpan">duration</span>(&#x27; (&#x27; +
+prettyMs(test.duration) + &#x27;)&#x27;) : &#x27;&#x27;;
+
+		return &#x27;  &#x27; + colors.pass(figures.tick) + &#x27; &#x27; + test.title + duration;
+	}
+	unhandledError(err) {
+		if (err.type === &#x27;exception&#x27; &#x26;&#x26; err.name === &#x27;AvaError&#x27;) {
+			return colors.error(&#x27;  &#x27; + figures.cross + &#x27; &#x27; + err.message);
+		}
+...</pre></li>
     </ul>
 
 
@@ -1135,22 +1173,17 @@
 		return applyStyle.apply(builder, arguments);
 	}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-		conf = &#x27;default&#x27;;
+	if (debug.enabled) {
+		require(&#x27;time-require&#x27;); // eslint-disable-line import/no-unassigned-import
 	}
 
-	// Check for valid babel config shortcuts (can be either `default` or `inherit`)
-	const isValidShortcut = conf === &#x27;default&#x27; || conf === &#x27;inherit&#x27;;
-
-	if (!conf || (typeof conf === &#x27;string&#x27; &#x26;&#x26; !isValidShortcut)) {
-		let message = colors.<span class="apidocCodeKeywordSpan">error</span>(figures.cross);
-		message += &#x27; Unexpected Babel configuration for AVA. &#x27;;
-		message += &#x27;See &#x27; + chalk.underline(&#x27;https://github.com/avajs/ava#es2015-support&#x27;) + &#x27; for allowed values
-.&#x27;;
-
-		throw new Error(message);
+	try {
+		require(&#x27;./lib/cli&#x27;).run();
+	} catch (err) {
+		console.<span class="apidocCodeKeywordSpan">error</span>(`\n  ${err.message}`);
+		process.exit(1);
 	}
-
-	return conf;
+}
 ...</pre></li>
     </ul>
 
@@ -1166,7 +1199,23 @@
     <li>description and source-code<pre class="apidocCodePre">errorSource = function () {
 		return applyStyle.apply(builder, arguments);
 	}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+					return;
+				}
+
+				const beforeSpacing = index === 0 ? &#x27;\n\n&#x27; : &#x27;\n\n\n\n&#x27;;
+
+				status += beforeSpacing + &#x27;  &#x27; + colors.title(test.title) + &#x27;\n&#x27;;
+				if (test.error.source) {
+					status += &#x27;  &#x27; + colors.<span class="apidocCodeKeywordSpan">errorSource</span>(test.error.source.file + &#x27;:&#
+x27; + test.error.source.line) + &#x27;\n&#x27;;
+
+					const excerpt = codeExcerpt(test.error.source, {maxWidth: process.stdout.columns});
+					if (excerpt) {
+						status += &#x27;\n&#x27; + indentString(excerpt, 2) + &#x27;\n&#x27;;
+					}
+				}
+...</pre></li>
     </ul>
 
 
@@ -1181,7 +1230,23 @@
     <li>description and source-code<pre class="apidocCodePre">errorStack = function () {
 		return applyStyle.apply(builder, arguments);
 	}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+						status += &#x27;\n&#x27; + indentString(message, 2) + &#x27;\n&#x27;;
+					}
+				}
+
+				if (test.error.stack) {
+					const extracted = extractStack(test.error.stack);
+					if (extracted.includes(&#x27;\n&#x27;)) {
+						status += &#x27;\n&#x27; + indentString(colors.<span class="apidocCodeKeywordSpan">errorStack</span>(extracted), 2);
+					}
+				}
+			});
+		}
+
+		if (this.rejectionCount &#x3e; 0 || this.exceptionCount &#x3e; 0) {
+			// TODO(sindresorhus): Figure out why this causes a test failure when switched to a for-of loop
+...</pre></li>
     </ul>
 
 
@@ -1196,7 +1261,28 @@
     <li>description and source-code<pre class="apidocCodePre">information = function () {
 		return applyStyle.apply(builder, arguments);
 	}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+					status += colors.errorStack(errorStack);
+				}
+			});
+		}
+
+		if (runStatus.failFastEnabled === true &#x26;&#x26; runStatus.remainingCount &#x3e; 0 &#x26;&#x26; runStatus.failCount &#x3e;
+0) {
+			const remaining = &#x27;At least &#x27; + runStatus.remainingCount + &#x27; &#x27; + plur(&#x27;test was&#x27;, &#x27;tests were
+&#x27;, runStatus.remainingCount) + &#x27; skipped.&#x27;;
+			status += &#x27;\n\n  &#x27; + colors.<span class="apidocCodeKeywordSpan">information</span>(&#x27;`--fail-fast` is on. &#x27
+; + remaining);
+		}
+
+		if (runStatus.hasExclusive === true &#x26;&#x26; runStatus.remainingCount &#x3e; 0) {
+			status += &#x27;\n\n  &#x27; + colors.information(&#x27;The .only() modifier is used in some tests.&#x27;, runStatus.remainingCount
+, plur(&#x27;test&#x27;, runStatus.remainingCount), plur(&#x27;was&#x27;, &#x27;were&#x27;, runStatus.remainingCount), &#x27;not
+ run&#x27;);
+		}
+
+		return status + &#x27;\n\n&#x27;;
+...</pre></li>
     </ul>
 
 
@@ -1274,7 +1360,23 @@ You must specify the implementation function.
     <li>description and source-code<pre class="apidocCodePre">stack = function () {
 		return applyStyle.apply(builder, arguments);
 	}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		}
+
+		if (this.knownFailureCount &#x3e; 0) {
+			for (const test of runStatus.knownFailures) {
+				const title = test.title;
+				status += &#x27;\n\n   &#x27; + colors.title(title);
+				// TODO: Output description with link
+				// status += colors.<span class="apidocCodeKeywordSpan">stack</span>(description);
+			}
+		}
+
+		if (this.failCount &#x3e; 0) {
+			runStatus.errors.forEach((test, index) =&#x3e; {
+				if (!test.error) {
+					return;
+...</pre></li>
     </ul>
 
 
@@ -1289,7 +1391,24 @@ You must specify the implementation function.
     <li>description and source-code<pre class="apidocCodePre">title = function () {
 		return applyStyle.apply(builder, arguments);
 	}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		if (runStatus.previousFailCount &#x3e; 0) {
+			status += &#x27;\n  &#x27; + colors.error(runStatus.previousFailCount, &#x27;previous&#x27;, plur(&#x27;failure&#x27;, runStatus
+.previousFailCount), &#x27;in test files that were not rerun&#x27;);
+		}
+
+		if (this.knownFailureCount &#x3e; 0) {
+			for (const test of runStatus.knownFailures) {
+				const title = test.title;
+				status += &#x27;\n\n   &#x27; + colors.<span class="apidocCodeKeywordSpan">title</span>(title);
+				// TODO: Output description with link
+				// status += colors.stack(description);
+			}
+		}
+
+		if (this.failCount &#x3e; 0) {
+			runStatus.errors.forEach((test, index) =&#x3e; {
+...</pre></li>
     </ul>
 
 
@@ -1431,7 +1550,23 @@ This allows you to merge `.failing` tests before a fix is implemented without br
 
 	return result;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+				}
+
+				if (test.error.message) {
+					status += &#x27;\n&#x27; + indentString(test.error.message, 2) + &#x27;\n&#x27;;
+				}
+
+				if (test.error.avaAssertionError) {
+					const formatted = formatAssertError.<span class="apidocCodeKeywordSpan">formatSerializedError</span>(test.error);
+					if (formatted) {
+						status += &#x27;\n&#x27; + indentString(formatted, 2);
+					}
+
+					const message = improperUsageMessages.forError(test.error);
+					if (message) {
+						status += &#x27;\n&#x27; + indentString(message, 2) + &#x27;\n&#x27;;
+...</pre></li>
     </ul>
 
 
@@ -1520,35 +1655,15 @@ This allows you to merge `.failing` tests before a fix is implemented without br
     <h2>
         <a href="#apidoc.element.ava.globals.setImmediate" id="apidoc.element.ava.globals.setImmediate">
         function <span class="apidocSignatureSpan">ava.globals.</span>setImmediate
-        <span class="apidocSignatureSpan">(callback, arg1, arg2, arg3)</span>
+        <span class="apidocSignatureSpan">()</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">setImmediate = function (callback, arg1, arg2, arg3) {
-  if (typeof callback !== &#x27;function&#x27;) {
-    throw new TypeError(&#x27;&#x22;callback&#x22; argument must be a function&#x27;);
-  }
-
-  var i, args;
-
-  switch (arguments.length) {
-    // fast cases
-    case 1:
-      break;
-    case 2:
-      args = [arg1];
-      break;
-    case 3:
-      args = [arg1, arg2];
-      break;
-    default:
-      args = [arg1, arg2, arg3];
-      for (i = 4; i &#x3c; arguments.length; i++)
-        // extend array dynamically, makes .apply run much faster in v6.0.0
-        args[i - 1] = arguments[i];
-      break;
-  }
-  return createImmediate(args, callback);
+    <li>description and source-code<pre class="apidocCodePre">setImmediate = function () {
+<span class="apidocCodeCommentSpan">/*
+ * this function will do nothing
+ */
+</span>    return;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1567,6 +1682,57 @@ This allows you to merge `.failing` tests before a fix is implemented without br
     </ul>
 
 
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ava.improper_usage_messages" id="apidoc.module.ava.improper_usage_messages">module ava.improper_usage_messages</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ava.improper_usage_messages.forError" id="apidoc.element.ava.improper_usage_messages.forError">
+        function <span class="apidocSignatureSpan">ava.improper_usage_messages.</span>forError
+        <span class="apidocSignatureSpan">(!error.improperUsage)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error =&#x3e; {
+	if (!error.improperUsage) {
+		return null;
+	}
+
+	const assertion = error.assertion;
+	if (assertion !== &#x27;throws&#x27; || !assertion === &#x27;notThrows&#x27;) {
+		return null;
+	}
+
+	return `Try wrapping the first argument to \`t.${assertion}()\` in a function:
+
+  ${chalk.cyan(`t.${assertion}(() =&#x3e; { `)}${chalk.grey(&#x27;/* your code here */&#x27;)}${chalk.cyan(&#x27; })&#x27;)}
+
+Visit the following URL for more details:
+
+  ${chalk.blue.underline(&#x27;https://github.com/avajs/ava#throwsfunctionpromise-error-message&#x27;)}`;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+				if (test.error.avaAssertionError) {
+					const formatted = formatAssertError.formatSerializedError(test.error);
+					if (formatted) {
+						status += &#x27;\n&#x27; + indentString(formatted, 2);
+					}
+
+					const message = improperUsageMessages.<span class="apidocCodeKeywordSpan">forError</span>(test.error);
+					if (message) {
+						status += &#x27;\n&#x27; + indentString(message, 2) + &#x27;\n&#x27;;
+					}
+				}
+
+				if (test.error.stack) {
+					const extracted = extractStack(test.error.stack);
+...</pre></li>
+    </ul>
 
 
 </div>
